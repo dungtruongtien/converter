@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { CronGeneratorClient } from "@/components/CronGeneratorClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Cron Expression Generator — Build & Validate Cron Schedules",
   description: "Generate, validate, and understand cron expressions with a visual builder and human-readable descriptions. Free online cron generator with common schedule presets.",
   keywords: ["cron expression generator", "cron schedule builder", "cron syntax", "cron validator", "cron expression examples", "online cron generator"],
   alternates: { canonical: "/cron-generator" },
-  openGraph: { type: "website", url: `${siteUrl}/cron-generator`, siteName: "ToolFree", title: "Cron Expression Generator — Free Online Tool", description: "Build and validate cron expressions with a visual builder and plain-English descriptions.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/cron-generator`, siteName: "Gadify", title: "Cron Expression Generator — Free Online Tool", description: "Build and validate cron expressions with a visual builder and plain-English descriptions.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Cron Expression Generator — Free Online Tool", description: "Build cron schedules visually and get plain-English descriptions instantly." },
 };
 

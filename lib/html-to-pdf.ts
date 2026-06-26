@@ -17,13 +17,15 @@ export async function convertHtmlToPdf(
   html: string,
   options: HtmlToPdfOptions
 ): Promise<Buffer> {
-  const isServerless = !!process.env.AWS_LAMBDA_FUNCTION_NAME ||
+  // Use @sparticuz/chromium on Lambda/Vercel OR when explicitly opted-in (e.g. Railway)
+  const useSparkituz =
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME ||
     !!process.env.VERCEL ||
-    process.env.NODE_ENV === "production";
+    !!process.env.USE_SPARTICUZ_CHROMIUM;
 
   let browser;
 
-  if (isServerless) {
+  if (useSparkituz) {
     const chromium = (await import("@sparticuz/chromium")).default;
     const puppeteer = await import("puppeteer-core");
 

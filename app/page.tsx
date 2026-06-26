@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AdSlot } from "@/components/ad-slot";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
-  title: "ToolFree — Free Online Tools | PDF, Social Media & Developer Utilities",
+  title: "Gadify — Free Online Tools | PDF, Social Media & Developer Utilities",
   description:
     "14 free online tools in one place. Convert PDF to HTML, download Instagram & Facebook videos, count words, encode Base64, convert units, and more. No signup, no watermark.",
   keywords: [
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    siteName: "ToolFree",
-    title: "ToolFree — Free Online Tools",
+    siteName: "Gadify",
+    title: "Gadify — Free Online Tools",
     description:
       "PDF converter and social media downloader tools. Free, no signup, no watermark.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ToolFree — Free Online Tools",
+    title: "Gadify — Free Online Tools",
     description:
       "PDF converter and social media downloader tools. Free, no signup, no watermark.",
   },
@@ -42,7 +42,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "ToolFree",
+    name: "Gadify",
     url: siteUrl,
     description:
       "Free online tools: PDF to HTML converter, HTML to PDF converter, Instagram downloader, Facebook video downloader, Twitter video downloader.",
@@ -59,7 +59,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Free Online Tools",
-    description: "All tools available on ToolFree",
+    description: "All tools available on Gadify",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "PDF to HTML Converter", url: `${siteUrl}/pdf-to-html` },
       { "@type": "ListItem", position: 2, name: "HTML to PDF Converter", url: `${siteUrl}/html-to-pdf` },
@@ -176,7 +176,7 @@ const faqs = [
   },
   {
     q: "Do I need to create an account?",
-    a: "No. Every tool on ToolFree works without any signup or login. Just open the tool and use it immediately.",
+    a: "No. Every tool on Gadify works without any signup or login. Just open the tool and use it immediately.",
   },
   {
     q: "Is my data safe?",

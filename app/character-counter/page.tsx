@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { CharacterCounterClient } from "@/components/CharacterCounterClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Character Counter — Count Characters Online Free",
   description: "Count characters with and without spaces, letters, digits, and check Twitter, SMS, and SEO character limits. Free, instant, no signup.",
   keywords: ["character counter", "character count", "count characters online", "twitter character counter", "sms character limit", "meta description length"],
   alternates: { canonical: "/character-counter" },
-  openGraph: { type: "website", url: `${siteUrl}/character-counter`, siteName: "ToolFree", title: "Character Counter — Free Online Tool", description: "Count characters and check platform limits for Twitter, SMS, and SEO.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/character-counter`, siteName: "Gadify", title: "Character Counter — Free Online Tool", description: "Count characters and check platform limits for Twitter, SMS, and SEO.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Character Counter — Free Online Tool", description: "Instant character count with Twitter, SMS, and SEO limit checker." },
 };
 

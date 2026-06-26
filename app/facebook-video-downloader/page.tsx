@@ -5,12 +5,12 @@ import FacebookClient from '@/components/FacebookClient'
 import AdUnit from '@/components/AdUnit'
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://toolfree.app'
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gadify.app'
 
 export const metadata: Metadata = {
   title: 'Facebook Reels Downloader – Download Facebook Reels Free Online',
   description:
-    'Download Facebook Reels videos for free with ToolFree. Save full-quality Facebook Reels from any public account instantly — no login, no watermark, no app required.',
+    'Download Facebook Reels videos for free with Gadify. Save full-quality Facebook Reels from any public account instantly — no login, no watermark, no app required.',
   keywords: [
     'facebook reels downloader',
     'download facebook reels',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/facebook-video-downloader`,
-    siteName: 'ToolFree',
+    siteName: 'Gadify',
     title: 'Facebook Reels Downloader – Download Facebook Reels Free Online',
     description:
       'Download full-quality Facebook Reels from any public account for free. No login, no watermark, no app required.',
@@ -57,23 +57,23 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Can I download Facebook Reels without an account?',
-    a: 'Yes. ToolFree lets you download Reels from any public Facebook account without logging in or creating an account.',
+    a: 'Yes. Gadify lets you download Reels from any public Facebook account without logging in or creating an account.',
   },
   {
     q: 'Are downloaded Facebook Reels in full quality?',
-    a: 'Yes. ToolFree retrieves the highest-quality version of the Reel directly from Facebook\'s CDN — no compression or watermark added.',
+    a: 'Yes. Gadify retrieves the highest-quality version of the Reel directly from Facebook\'s CDN — no compression or watermark added.',
   },
   {
-    q: 'Does ToolFree work on private Facebook Reels?',
-    a: 'No. ToolFree only works with public Facebook Reels. Videos set to "Friends only" or private cannot be accessed without the owner\'s permission.',
+    q: 'Does Gadify work on private Facebook Reels?',
+    a: 'No. Gadify only works with public Facebook Reels. Videos set to "Friends only" or private cannot be accessed without the owner\'s permission.',
   },
   {
     q: 'Can I download Facebook Reels on iPhone or Android?',
-    a: 'Yes. ToolFree works on all devices — iPhone, Android, Windows, Mac — directly in the browser with no app installation needed.',
+    a: 'Yes. Gadify works on all devices — iPhone, Android, Windows, Mac — directly in the browser with no app installation needed.',
   },
   {
-    q: 'Is it safe to use ToolFree to download Facebook Reels?',
-    a: 'Yes. ToolFree never asks for your Facebook login or password. It only accesses publicly available video URLs from Facebook\'s own servers.',
+    q: 'Is it safe to use Gadify to download Facebook Reels?',
+    a: 'Yes. Gadify never asks for your Facebook login or password. It only accesses publicly available video URLs from Facebook\'s own servers.',
   },
   {
     q: 'Is there a limit to how many Facebook Reels I can download?',
@@ -85,7 +85,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'ToolFree – Facebook Reels Downloader',
+    name: 'Gadify – Facebook Reels Downloader',
     url: `${siteUrl}/facebook-video-downloader`,
     description: 'Free online Facebook Reels downloader. Download full-quality Reels from any public Facebook account — no login, no watermark, no app required.',
     applicationCategory: 'UtilitiesApplication',
@@ -96,7 +96,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How to Download Facebook Reels',
-    description: 'Download any public Facebook Reel in 3 simple steps using ToolFree.',
+    description: 'Download any public Facebook Reel in 3 simple steps using Gadify.',
     step: [
       {
         '@type': 'HowToStep',
@@ -107,8 +107,8 @@ const jsonLd = [
       {
         '@type': 'HowToStep',
         position: 2,
-        name: 'Paste the URL into ToolFree',
-        text: 'Go to toolfree.app/facebook-video-downloader, paste the Reel URL into the input field, and click the Fetch button.',
+        name: 'Paste the URL into Gadify',
+        text: 'Go to gadify.app/facebook-video-downloader, paste the Reel URL into the input field, and click the Fetch button.',
       },
       {
         '@type': 'HowToStep',
@@ -169,9 +169,9 @@ export default function FbReelPage() {
           {/* Intro */}
           <section className="max-w-2xl mx-auto mb-8 text-center">
             <p className="text-sm text-gray-700 leading-relaxed">
-              ToolFree is a free online Facebook Reels downloader that lets you save videos from any public Reel directly to your device.
+              Gadify is a free online Facebook Reels downloader that lets you save videos from any public Reel directly to your device.
               Facebook does not provide a built-in download button for Reels, making it hard to save videos you want to keep.
-              ToolFree solves this — paste the Reel URL, complete a quick verification, and download the original-quality video instantly with no account, no app, and no watermark.
+              Gadify solves this — paste the Reel URL, complete a quick verification, and download the original-quality video instantly with no account, no app, and no watermark.
             </p>
           </section>
 
@@ -201,7 +201,7 @@ export default function FbReelPage() {
                 {
                   step: '2',
                   title: 'Paste the URL & Click Fetch',
-                  body: 'Paste the copied Reel URL into the input field above and click Fetch. ToolFree will retrieve the video instantly.',
+                  body: 'Paste the copied Reel URL into the input field above and click Fetch. Gadify will retrieve the video instantly.',
                 },
                 {
                   step: '3',
@@ -218,15 +218,15 @@ export default function FbReelPage() {
             </ol>
           </section>
 
-          {/* Why use ToolFree */}
+          {/* Why use Gadify */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="why-instadown-fb">
-            <h2 id="why-instadown-fb" className="text-xl font-bold text-gray-900 mb-3">Why Use ToolFree to Download Facebook Reels?</h2>
+            <h2 id="why-instadown-fb" className="text-xl font-bold text-gray-900 mb-3">Why Use Gadify to Download Facebook Reels?</h2>
             <ul className="space-y-3">
               {[
-                { title: 'Full Original Quality', body: 'ToolFree downloads the highest-quality version of each Reel directly from Facebook\'s CDN — no re-encoding, no compression, no watermark.' },
-                { title: 'No Login Required', body: 'ToolFree never asks for your Facebook username or password. You do not need a Facebook account to use this tool.' },
-                { title: 'Works on All Devices', body: 'ToolFree is a web-based tool that works on iPhone, Android, Windows, Mac, and any device with a browser — no app installation required.' },
-                { title: 'Completely Free', body: 'ToolFree is 100% free with no hidden fees, no premium plans, and no download limits. Download as many public Facebook Reels as you need.' },
+                { title: 'Full Original Quality', body: 'Gadify downloads the highest-quality version of each Reel directly from Facebook\'s CDN — no re-encoding, no compression, no watermark.' },
+                { title: 'No Login Required', body: 'Gadify never asks for your Facebook username or password. You do not need a Facebook account to use this tool.' },
+                { title: 'Works on All Devices', body: 'Gadify is a web-based tool that works on iPhone, Android, Windows, Mac, and any device with a browser — no app installation required.' },
+                { title: 'Completely Free', body: 'Gadify is 100% free with no hidden fees, no premium plans, and no download limits. Download as many public Facebook Reels as you need.' },
               ].map(({ title, body }) => (
                 <li key={title} className="flex gap-3 bg-white rounded-xl border border-gray-100 shadow-sm p-4">
                   <span className="flex-shrink-0 text-green-500 font-bold text-base mt-0.5">✓</span>
@@ -238,12 +238,12 @@ export default function FbReelPage() {
 
           {/* Safety section */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="fb-safe">
-            <h2 id="fb-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Facebook Reels with ToolFree?</h2>
+            <h2 id="fb-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Facebook Reels with Gadify?</h2>
             <p className="text-sm text-gray-700 mb-3">
-              Yes, ToolFree is completely safe to use. We never request your Facebook credentials, access your account, or store any personal information on our servers.
+              Yes, Gadify is completely safe to use. We never request your Facebook credentials, access your account, or store any personal information on our servers.
             </p>
             <p className="text-sm text-gray-700">
-              ToolFree only retrieves the publicly accessible video URL from a Facebook Reel and delivers it to your browser for download. No data is written to Facebook and no information about you is collected or stored.
+              Gadify only retrieves the publicly accessible video URL from a Facebook Reel and delivers it to your browser for download. No data is written to Facebook and no information about you is collected or stored.
             </p>
           </section>
 
@@ -295,7 +295,7 @@ export default function FbReelPage() {
               <a href="/sitemap.xml" className="hover:text-gray-700">Sitemap</a>
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700">Facebook</a>
             </nav>
-            <p className="text-center text-xs text-gray-500">ToolFree is not affiliated with Facebook or Meta Platforms, Inc.</p>
+            <p className="text-center text-xs text-gray-500">Gadify is not affiliated with Facebook or Meta Platforms, Inc.</p>
             <p className="text-center text-xs text-gray-500 mt-1">This tool only accesses publicly available content in accordance with Facebook&apos;s public data policies.</p>
           </footer>
 

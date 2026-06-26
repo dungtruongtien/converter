@@ -5,12 +5,12 @@ import AdUnit from '@/components/AdUnit'
 import { RelatedTools } from '@/components/related-tools'
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://toolfree.app'
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gadify.app'
 
 export const metadata: Metadata = {
   title: 'Instagram Photo Downloader – Download Instagram Photos Free',
   description:
-    'Download full-resolution Instagram photos for free with ToolFree. Save photos from any public Instagram post instantly — no login, no watermark, no app required.',
+    'Download full-resolution Instagram photos for free with Gadify. Save photos from any public Instagram post instantly — no login, no watermark, no app required.',
   keywords: [
     'instagram photo downloader',
     'download instagram photos',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/instagram-photo-downloader`,
-    siteName: 'ToolFree',
+    siteName: 'Gadify',
     title: 'Instagram Photo Downloader – Download Instagram Photos Free',
     description:
       'Download full-resolution photos from any public Instagram post for free. No login, no watermark, no app required.',
@@ -56,24 +56,24 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'Does ToolFree work on private Instagram accounts?',
-    a: 'No. ToolFree only works with public Instagram posts. Private accounts require authentication and their content cannot be accessed without the account owner\'s permission.',
+    q: 'Does Gadify work on private Instagram accounts?',
+    a: 'No. Gadify only works with public Instagram posts. Private accounts require authentication and their content cannot be accessed without the account owner\'s permission.',
   },
   {
     q: 'Do I need an Instagram account to download photos?',
-    a: 'No. You can download photos from any public Instagram post without logging in to Instagram or creating an account on ToolFree. Simply paste the post URL and download.',
+    a: 'No. You can download photos from any public Instagram post without logging in to Instagram or creating an account on Gadify. Simply paste the post URL and download.',
   },
   {
     q: 'Are the downloaded Instagram photos full resolution?',
-    a: 'Yes. ToolFree retrieves the highest-resolution version of each photo directly from Instagram\'s CDN servers. You get the same quality as the original upload — no compression, no watermark.',
+    a: 'Yes. Gadify retrieves the highest-resolution version of each photo directly from Instagram\'s CDN servers. You get the same quality as the original upload — no compression, no watermark.',
   },
   {
     q: 'Is there a limit to how many Instagram photos I can download?',
-    a: 'There is no daily download limit on ToolFree. You can download as many public Instagram photos as you need, completely free of charge.',
+    a: 'There is no daily download limit on Gadify. You can download as many public Instagram photos as you need, completely free of charge.',
   },
   {
     q: 'Why do I need to complete a human verification?',
-    a: 'The quick CAPTCHA verification step prevents automated bots from abusing the service. This keeps ToolFree free and fast for all real users.',
+    a: 'The quick CAPTCHA verification step prevents automated bots from abusing the service. This keeps Gadify free and fast for all real users.',
   },
   {
     q: 'How long is the image link valid after it is revealed?',
@@ -84,16 +84,16 @@ const faqs = [
     a: 'Any URL in the format instagram.com/p/XXXXX/ pointing to a public photo post is supported. Multi-image carousel posts, Reels, and Stories are not currently supported.',
   },
   {
-    q: 'Is it safe to use ToolFree to download Instagram photos?',
-    a: 'Yes. ToolFree never asks for your Instagram login, password, or personal information. We only access publicly available image URLs from Instagram\'s own servers.',
+    q: 'Is it safe to use Gadify to download Instagram photos?',
+    a: 'Yes. Gadify never asks for your Instagram login, password, or personal information. We only access publicly available image URLs from Instagram\'s own servers.',
   },
   {
     q: 'Can I download Instagram photos on my iPhone or Android?',
-    a: 'Yes. ToolFree works on all devices including iPhone, Android, Windows, and Mac — no app installation needed. Just open toolfree.app in any mobile browser.',
+    a: 'Yes. Gadify works on all devices including iPhone, Android, Windows, and Mac — no app installation needed. Just open gadify.app in any mobile browser.',
   },
   {
-    q: 'Does ToolFree add a watermark to downloaded photos?',
-    a: 'No. ToolFree downloads the original photo directly from Instagram with no modifications, no watermark, and no branding added.',
+    q: 'Does Gadify add a watermark to downloaded photos?',
+    a: 'No. Gadify downloads the original photo directly from Instagram with no modifications, no watermark, and no branding added.',
   },
 ]
 
@@ -101,7 +101,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'ToolFree – Instagram Photo Downloader',
+    name: 'Gadify – Instagram Photo Downloader',
     url: `${siteUrl}/instagram-photo-downloader`,
     description: 'Free online Instagram photo downloader. Download full-resolution photos from any public Instagram post — no login, no watermark, no app required.',
     applicationCategory: 'UtilitiesApplication',
@@ -120,7 +120,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How to Download Instagram Photos',
-    description: 'Download any public Instagram photo in 3 simple steps using ToolFree.',
+    description: 'Download any public Instagram photo in 3 simple steps using Gadify.',
     step: [
       {
         '@type': 'HowToStep',
@@ -131,8 +131,8 @@ const jsonLd = [
       {
         '@type': 'HowToStep',
         position: 2,
-        name: 'Paste the URL into ToolFree',
-        text: 'Go to toolfree.app/instagram-photo-downloader, paste the Instagram post URL into the input field, and click the Fetch button.',
+        name: 'Paste the URL into Gadify',
+        text: 'Go to gadify.app/instagram-photo-downloader, paste the Instagram post URL into the input field, and click the Fetch button.',
       },
       {
         '@type': 'HowToStep',
@@ -193,9 +193,9 @@ export default function InstaPhotoPage() {
           {/* Intro */}
           <section className="max-w-2xl mx-auto mb-8 text-center">
             <p className="text-sm text-gray-700 leading-relaxed">
-              ToolFree is a free online Instagram photo downloader that lets you save full-resolution pictures from any public Instagram post directly to your device.
+              Gadify is a free online Instagram photo downloader that lets you save full-resolution pictures from any public Instagram post directly to your device.
               Instagram does not provide a built-in download button, which makes it difficult to save photos you want to keep.
-              ToolFree solves this by letting you paste the post URL, complete a quick verification, and download the original-quality photo instantly — with no account, no app, and no watermark.
+              Gadify solves this by letting you paste the post URL, complete a quick verification, and download the original-quality photo instantly — with no account, no app, and no watermark.
             </p>
           </section>
 
@@ -225,7 +225,7 @@ export default function InstaPhotoPage() {
                 {
                   step: '2',
                   title: 'Paste the URL & Click Fetch',
-                  body: 'Paste the copied Instagram post URL into the input field above and click the Fetch button. ToolFree will retrieve the photo information instantly.',
+                  body: 'Paste the copied Instagram post URL into the input field above and click the Fetch button. Gadify will retrieve the photo information instantly.',
                 },
                 {
                   step: '3',
@@ -246,13 +246,13 @@ export default function InstaPhotoPage() {
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="download-mobile">
             <h2 id="download-mobile" className="text-xl font-bold text-gray-900 mb-3">How to Download Instagram Photos on Mobile</h2>
             <p className="text-sm text-gray-700 mb-4">
-              ToolFree works on all smartphones — iPhone, Android, or any other device with a browser. No app installation is required. Here is how to download Instagram photos on mobile:
+              Gadify works on all smartphones — iPhone, Android, or any other device with a browser. No app installation is required. Here is how to download Instagram photos on mobile:
             </p>
             <ol className="space-y-3">
               {[
                 'Open the Instagram app on your phone and navigate to the public post you want to download.',
                 'Tap the three-dot menu (⋯) at the top-right corner of the post and select <strong>Copy Link</strong>.',
-                'Open any browser on your phone (Chrome, Safari, Firefox) and go to <strong>toolfree.app/instagram-photo-downloader</strong>.',
+                'Open any browser on your phone (Chrome, Safari, Firefox) and go to <strong>gadify.app/instagram-photo-downloader</strong>.',
                 'Paste the copied link into the input field and tap <strong>Fetch</strong>.',
                 'Complete the quick verification, then tap <strong>Download Image</strong> to save the photo to your phone\'s camera roll or downloads folder.',
               ].map((step, i) => (
@@ -274,7 +274,7 @@ export default function InstaPhotoPage() {
               {[
                 'Open your browser and go to <strong>instagram.com</strong>. Navigate to the public post you want to download.',
                 'Copy the URL from the browser address bar (e.g. <em>instagram.com/p/XXXXXX/</em>).',
-                'Open a new tab and go to <strong>toolfree.app/instagram-photo-downloader</strong>.',
+                'Open a new tab and go to <strong>gadify.app/instagram-photo-downloader</strong>.',
                 'Paste the Instagram post URL into the input field and click <strong>Fetch</strong>.',
                 'Complete the CAPTCHA verification, then click <strong>Download Image</strong>. The photo will be saved to your Downloads folder at full resolution.',
               ].map((step, i) => (
@@ -286,20 +286,20 @@ export default function InstaPhotoPage() {
             </ol>
           </section>
 
-          {/* Why use ToolFree */}
+          {/* Why use Gadify */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="why-instadown">
-            <h2 id="why-instadown" className="text-xl font-bold text-gray-900 mb-3">Why Use ToolFree to Download Instagram Photos?</h2>
+            <h2 id="why-instadown" className="text-xl font-bold text-gray-900 mb-3">Why Use Gadify to Download Instagram Photos?</h2>
             <p className="text-sm text-gray-700 mb-4">
-              There are many Instagram photo downloaders available online, but ToolFree stands out for its simplicity, safety, and quality. Here is what makes ToolFree the best free Instagram photo downloader:
+              There are many Instagram photo downloaders available online, but Gadify stands out for its simplicity, safety, and quality. Here is what makes Gadify the best free Instagram photo downloader:
             </p>
             <ul className="space-y-3">
               {[
-                { title: 'Full Original Resolution', body: 'ToolFree downloads the highest-quality version of each photo directly from Instagram\'s servers — the same resolution as the original upload, not a compressed screenshot.' },
-                { title: 'No Watermark', body: 'Downloaded photos are completely clean with no ToolFree logo, watermark, or branding added. You get the original photo exactly as the creator posted it.' },
-                { title: 'No Login Required', body: 'ToolFree never asks for your Instagram username or password. You do not need to create an account or connect any social media profiles to use the tool.' },
-                { title: 'Works on All Devices', body: 'ToolFree is a web-based tool that works directly in your browser on iPhone, Android, Windows, Mac, and any device with internet access.' },
-                { title: 'Completely Free', body: 'ToolFree is 100% free to use with no hidden fees, no premium plans, and no download limits. Download as many public Instagram photos as you need.' },
-                { title: 'Fast and Secure', body: 'ToolFree only accesses publicly available image URLs. No data is stored on our servers and the process is completed instantly in your browser.' },
+                { title: 'Full Original Resolution', body: 'Gadify downloads the highest-quality version of each photo directly from Instagram\'s servers — the same resolution as the original upload, not a compressed screenshot.' },
+                { title: 'No Watermark', body: 'Downloaded photos are completely clean with no Gadify logo, watermark, or branding added. You get the original photo exactly as the creator posted it.' },
+                { title: 'No Login Required', body: 'Gadify never asks for your Instagram username or password. You do not need to create an account or connect any social media profiles to use the tool.' },
+                { title: 'Works on All Devices', body: 'Gadify is a web-based tool that works directly in your browser on iPhone, Android, Windows, Mac, and any device with internet access.' },
+                { title: 'Completely Free', body: 'Gadify is 100% free to use with no hidden fees, no premium plans, and no download limits. Download as many public Instagram photos as you need.' },
+                { title: 'Fast and Secure', body: 'Gadify only accesses publicly available image URLs. No data is stored on our servers and the process is completed instantly in your browser.' },
               ].map(({ title, body }) => (
                 <li key={title} className="flex gap-3 bg-white rounded-xl border border-gray-100 shadow-sm p-4">
                   <span className="flex-shrink-0 text-green-500 font-bold text-base mt-0.5">✓</span>
@@ -313,24 +313,24 @@ export default function InstaPhotoPage() {
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="limitations">
             <h2 id="limitations" className="text-xl font-bold text-gray-900 mb-3">Can You Download Private Instagram Photos?</h2>
             <p className="text-sm text-gray-700 mb-3">
-              No. ToolFree can only download photos from <strong>public Instagram accounts</strong>. If a profile is set to private, its posts are not accessible to anyone who does not follow that account, and ToolFree cannot bypass this restriction.
+              No. Gadify can only download photos from <strong>public Instagram accounts</strong>. If a profile is set to private, its posts are not accessible to anyone who does not follow that account, and Gadify cannot bypass this restriction.
             </p>
             <p className="text-sm text-gray-700 mb-3">
-              This is by design — ToolFree only accesses data that Instagram makes publicly available. Attempting to download content from private accounts would violate Instagram&apos;s Terms of Service and user privacy.
+              This is by design — Gadify only accesses data that Instagram makes publicly available. Attempting to download content from private accounts would violate Instagram&apos;s Terms of Service and user privacy.
             </p>
             <p className="text-sm text-gray-700">
-              If the post URL you enter belongs to a private account, ToolFree will display an error. To download the photo, the account owner would need to switch their profile to public first.
+              If the post URL you enter belongs to a private account, Gadify will display an error. To download the photo, the account owner would need to switch their profile to public first.
             </p>
           </section>
 
           {/* Safety section */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="is-it-safe">
-            <h2 id="is-it-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Instagram Photos with ToolFree?</h2>
+            <h2 id="is-it-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Instagram Photos with Gadify?</h2>
             <p className="text-sm text-gray-700 mb-3">
-              Yes, ToolFree is completely safe to use. We never request your Instagram credentials, access your account, or store any personal information on our servers.
+              Yes, Gadify is completely safe to use. We never request your Instagram credentials, access your account, or store any personal information on our servers.
             </p>
             <p className="text-sm text-gray-700">
-              ToolFree is a read-only tool — it only retrieves the publicly accessible image URL from an Instagram post and proxies it to your browser for download. No data is written to Instagram and no information about you is collected or stored. The tool is safe to use on any device.
+              Gadify is a read-only tool — it only retrieves the publicly accessible image URL from an Instagram post and proxies it to your browser for download. No data is written to Instagram and no information about you is collected or stored. The tool is safe to use on any device.
             </p>
           </section>
 
@@ -338,7 +338,7 @@ export default function InstaPhotoPage() {
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="faq-heading">
             <h2 id="faq-heading" className="text-xl font-bold text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
             <p className="text-sm text-gray-700 text-center mb-6">
-              Everything you need to know about downloading Instagram photos with ToolFree.
+              Everything you need to know about downloading Instagram photos with Gadify.
             </p>
             <div className="space-y-4">
               {faqs.map(({ q, a }) => (
@@ -385,7 +385,7 @@ export default function InstaPhotoPage() {
               <a href="/sitemap.xml" className="hover:text-gray-700">Sitemap</a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700">Instagram</a>
             </nav>
-            <p className="text-center text-xs text-gray-500">ToolFree is not affiliated with Instagram or Meta Platforms, Inc.</p>
+            <p className="text-center text-xs text-gray-500">Gadify is not affiliated with Instagram or Meta Platforms, Inc.</p>
             <p className="text-center text-xs text-gray-500 mt-1">This tool only accesses publicly available content in accordance with Instagram&apos;s public data policies.</p>
           </footer>
 

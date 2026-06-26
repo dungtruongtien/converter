@@ -5,12 +5,12 @@ import TwitterClient from '@/components/TwitterClient'
 import AdUnit from '@/components/AdUnit'
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://toolfree.app'
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gadify.app'
 
 export const metadata: Metadata = {
   title: 'X / Twitter Video Downloader – Download Twitter Videos Free Online',
   description:
-    'Download X / Twitter videos for free with ToolFree. Save full-quality videos from any public tweet instantly — no login, no watermark, no app required.',
+    'Download X / Twitter videos for free with Gadify. Save full-quality videos from any public tweet instantly — no login, no watermark, no app required.',
   keywords: [
     'twitter video downloader',
     'x video downloader',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/twitter-video-downloader`,
-    siteName: 'ToolFree',
+    siteName: 'Gadify',
     title: 'X / Twitter Video Downloader – Download Twitter Videos Free Online',
     description:
       'Download full-quality X / Twitter videos from any public tweet for free. No login, no watermark, no app required.',
@@ -57,27 +57,27 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Can I download Twitter / X videos without an account?',
-    a: 'Yes. ToolFree lets you download videos from any public tweet without logging in or creating an account.',
+    a: 'Yes. Gadify lets you download videos from any public tweet without logging in or creating an account.',
   },
   {
     q: 'Are downloaded Twitter videos in full quality?',
-    a: 'Yes. ToolFree retrieves the highest-quality MP4 version of the video directly from Twitter\'s CDN — no compression or watermark added.',
+    a: 'Yes. Gadify retrieves the highest-quality MP4 version of the video directly from Twitter\'s CDN — no compression or watermark added.',
   },
   {
-    q: 'Does ToolFree work on private Twitter accounts?',
-    a: 'No. ToolFree only works with videos from public tweets. Videos on protected or private accounts cannot be accessed without the owner\'s permission.',
+    q: 'Does Gadify work on private Twitter accounts?',
+    a: 'No. Gadify only works with videos from public tweets. Videos on protected or private accounts cannot be accessed without the owner\'s permission.',
   },
   {
     q: 'Can I download Twitter videos on iPhone or Android?',
-    a: 'Yes. ToolFree works on all devices — iPhone, Android, Windows, Mac — directly in the browser with no app installation needed.',
+    a: 'Yes. Gadify works on all devices — iPhone, Android, Windows, Mac — directly in the browser with no app installation needed.',
   },
   {
-    q: 'Is it safe to use ToolFree to download Twitter videos?',
-    a: 'Yes. ToolFree never asks for your Twitter / X login or password. It only accesses publicly available video URLs from Twitter\'s own servers.',
+    q: 'Is it safe to use Gadify to download Twitter videos?',
+    a: 'Yes. Gadify never asks for your Twitter / X login or password. It only accesses publicly available video URLs from Twitter\'s own servers.',
   },
   {
     q: 'What tweet URL formats are supported?',
-    a: 'ToolFree supports both twitter.com and x.com URLs in the format: https://x.com/username/status/TWEET_ID',
+    a: 'Gadify supports both twitter.com and x.com URLs in the format: https://x.com/username/status/TWEET_ID',
   },
 ]
 
@@ -85,7 +85,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'ToolFree – X / Twitter Video Downloader',
+    name: 'Gadify – X / Twitter Video Downloader',
     url: `${siteUrl}/twitter-video-downloader`,
     description: 'Free online X / Twitter video downloader. Download full-quality videos from any public tweet — no login, no watermark, no app required.',
     applicationCategory: 'UtilitiesApplication',
@@ -96,7 +96,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How to Download X / Twitter Videos',
-    description: 'Download any public Twitter / X video in 3 simple steps using ToolFree.',
+    description: 'Download any public Twitter / X video in 3 simple steps using Gadify.',
     step: [
       {
         '@type': 'HowToStep',
@@ -107,8 +107,8 @@ const jsonLd = [
       {
         '@type': 'HowToStep',
         position: 2,
-        name: 'Paste the URL into ToolFree',
-        text: 'Go to toolfree.app/twitter-video-downloader, paste the tweet URL into the input field, and click the Fetch button.',
+        name: 'Paste the URL into Gadify',
+        text: 'Go to gadify.app/twitter-video-downloader, paste the tweet URL into the input field, and click the Fetch button.',
       },
       {
         '@type': 'HowToStep',
@@ -170,9 +170,9 @@ export default function TwitterVideoPage() {
           {/* Intro */}
           <section className="max-w-2xl mx-auto mb-8 text-center">
             <p className="text-sm text-gray-700 leading-relaxed">
-              ToolFree is a free online X / Twitter video downloader that lets you save videos from any public tweet directly to your device.
+              Gadify is a free online X / Twitter video downloader that lets you save videos from any public tweet directly to your device.
               X does not provide a built-in video download button, making it difficult to save content you want to keep offline.
-              ToolFree solves this — paste the tweet URL, complete a quick verification, and download the original-quality video instantly with no account, no app, and no watermark.
+              Gadify solves this — paste the tweet URL, complete a quick verification, and download the original-quality video instantly with no account, no app, and no watermark.
             </p>
           </section>
 
@@ -202,7 +202,7 @@ export default function TwitterVideoPage() {
                 {
                   step: '2',
                   title: 'Paste the URL & Click Fetch',
-                  body: 'Paste the copied tweet URL into the input field above and click Fetch. ToolFree will retrieve the video instantly.',
+                  body: 'Paste the copied tweet URL into the input field above and click Fetch. Gadify will retrieve the video instantly.',
                 },
                 {
                   step: '3',
@@ -219,15 +219,15 @@ export default function TwitterVideoPage() {
             </ol>
           </section>
 
-          {/* Why use ToolFree */}
+          {/* Why use Gadify */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="why-instadown-twitter">
-            <h2 id="why-instadown-twitter" className="text-xl font-bold text-gray-900 mb-3">Why Use ToolFree to Download Twitter Videos?</h2>
+            <h2 id="why-instadown-twitter" className="text-xl font-bold text-gray-900 mb-3">Why Use Gadify to Download Twitter Videos?</h2>
             <ul className="space-y-3">
               {[
-                { title: 'Full Original Quality', body: 'ToolFree downloads the highest-quality MP4 version of each video directly from Twitter\'s CDN — no re-encoding, no compression, no watermark.' },
-                { title: 'No Login Required', body: 'ToolFree never asks for your Twitter / X username or password. You do not need an account to use this tool.' },
-                { title: 'Works on All Devices', body: 'ToolFree is a web-based tool that works on iPhone, Android, Windows, Mac, and any device with a browser — no app installation required.' },
-                { title: 'Completely Free', body: 'ToolFree is 100% free with no hidden fees, no premium plans, and no download limits. Download as many public Twitter videos as you need.' },
+                { title: 'Full Original Quality', body: 'Gadify downloads the highest-quality MP4 version of each video directly from Twitter\'s CDN — no re-encoding, no compression, no watermark.' },
+                { title: 'No Login Required', body: 'Gadify never asks for your Twitter / X username or password. You do not need an account to use this tool.' },
+                { title: 'Works on All Devices', body: 'Gadify is a web-based tool that works on iPhone, Android, Windows, Mac, and any device with a browser — no app installation required.' },
+                { title: 'Completely Free', body: 'Gadify is 100% free with no hidden fees, no premium plans, and no download limits. Download as many public Twitter videos as you need.' },
               ].map(({ title, body }) => (
                 <li key={title} className="flex gap-3 bg-white rounded-xl border border-gray-100 shadow-sm p-4">
                   <span className="flex-shrink-0 text-green-500 font-bold text-base mt-0.5">✓</span>
@@ -239,12 +239,12 @@ export default function TwitterVideoPage() {
 
           {/* Safety section */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="twitter-safe">
-            <h2 id="twitter-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Twitter Videos with ToolFree?</h2>
+            <h2 id="twitter-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Twitter Videos with Gadify?</h2>
             <p className="text-sm text-gray-700 mb-3">
-              Yes, ToolFree is completely safe to use. We never request your Twitter / X credentials, access your account, or store any personal information on our servers.
+              Yes, Gadify is completely safe to use. We never request your Twitter / X credentials, access your account, or store any personal information on our servers.
             </p>
             <p className="text-sm text-gray-700">
-              ToolFree only retrieves the publicly accessible video URL from a tweet and delivers it to your browser for download. No data is written to Twitter and no information about you is collected or stored.
+              Gadify only retrieves the publicly accessible video URL from a tweet and delivers it to your browser for download. No data is written to Twitter and no information about you is collected or stored.
             </p>
           </section>
 
@@ -296,7 +296,7 @@ export default function TwitterVideoPage() {
               <a href="/twitter-video-downloader" className="hover:text-gray-700">Twitter Video</a>
               <a href="/sitemap.xml" className="hover:text-gray-700">Sitemap</a>
             </nav>
-            <p className="text-center text-xs text-gray-500">ToolFree is not affiliated with X Corp. or Twitter, Inc.</p>
+            <p className="text-center text-xs text-gray-500">Gadify is not affiliated with X Corp. or Twitter, Inc.</p>
             <p className="text-center text-xs text-gray-500 mt-1">This tool only accesses publicly available content in accordance with X&apos;s public data policies.</p>
           </footer>
 

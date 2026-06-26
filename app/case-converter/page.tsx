@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { CaseConverterClient } from "@/components/CaseConverterClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Case Converter — UPPER, lower, Title, camelCase, snake_case & More",
   description: "Convert text between UPPER CASE, lower case, Title Case, camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE. Free, instant, no signup.",
   keywords: ["case converter", "text case converter", "camelcase converter", "snake case converter", "title case", "uppercase converter", "kebab case"],
   alternates: { canonical: "/case-converter" },
-  openGraph: { type: "website", url: `${siteUrl}/case-converter`, siteName: "ToolFree", title: "Case Converter — Free Online Tool", description: "Convert text between all common cases: UPPER, lower, Title, camelCase, PascalCase, snake_case, kebab-case.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/case-converter`, siteName: "Gadify", title: "Case Converter — Free Online Tool", description: "Convert text between all common cases: UPPER, lower, Title, camelCase, PascalCase, snake_case, kebab-case.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Case Converter — Free Online Tool", description: "Instantly convert text to camelCase, PascalCase, snake_case, kebab-case, and more." },
 };
 

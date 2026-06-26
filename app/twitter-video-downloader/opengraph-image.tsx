@@ -44,7 +44,7 @@ export default function Image() {
           ))}
         </div>
         <div style={{ position: 'absolute', bottom: 40, color: 'rgba(255,255,255,0.45)', fontSize: 22 }}>
-          toolfree.app
+          gadify.app
         </div>
       </div>
     ),

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Base64Client } from "@/components/Base64Client";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Base64 Encode / Decode — Free Online Tool",
   description: "Encode text to Base64 or decode Base64 strings back to plain text. Supports Unicode. Free, instant, runs in your browser — no data sent to any server.",
   keywords: ["base64 encode", "base64 decode", "base64 encoder decoder", "base64 online", "encode base64 free", "decode base64 string"],
   alternates: { canonical: "/base64" },
-  openGraph: { type: "website", url: `${siteUrl}/base64`, siteName: "ToolFree", title: "Base64 Encode / Decode — Free Online Tool", description: "Encode or decode Base64 strings instantly. Supports Unicode. Runs in your browser.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/base64`, siteName: "Gadify", title: "Base64 Encode / Decode — Free Online Tool", description: "Encode or decode Base64 strings instantly. Supports Unicode. Runs in your browser.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Base64 Encode / Decode — Free Online Tool", description: "Instantly encode text to Base64 or decode Base64 back to plain text." },
 };
 

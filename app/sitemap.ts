@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/cron-generator", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/timestamp-converter", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/unit-converter", priority: 0.9, changeFrequency: "weekly" as const },
-    { url: "/pricing", priority: 0.6, changeFrequency: "monthly" as const },
   ];
 
   return tools.map(({ url, priority, changeFrequency }) => ({

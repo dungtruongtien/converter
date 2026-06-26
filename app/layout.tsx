@@ -16,14 +16,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID ?? "ca-pub-5200581180131547";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ToolFree — Free Online Tools",
-    template: "%s | ToolFree",
+    default: "Gadify — Free Online Tools",
+    template: "%s | Gadify",
   },
   description:
     "Free online tools: PDF to HTML converter, HTML to PDF converter, Instagram photo & Reels downloader, Facebook video downloader, Twitter/X video downloader. No signup required.",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     "twitter video downloader",
     "x video downloader",
   ],
-  authors: [{ name: "ToolFree" }],
-  creator: "ToolFree",
+  authors: [{ name: "Gadify" }],
+  creator: "Gadify",
   robots: {
     index: true,
     follow: true,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "ToolFree",
+    siteName: "Gadify",
   },
   icons: {
     icon: "/icon.svg",
@@ -91,7 +91,6 @@ export default function RootLayout({
                 <ul className="space-y-1.5">
                   <li><a href="/pdf-to-html" className="text-sm text-gray-500 hover:text-gray-900">PDF to HTML Converter</a></li>
                   <li><a href="/html-to-pdf" className="text-sm text-gray-500 hover:text-gray-900">HTML to PDF Converter</a></li>
-                  <li><a href="/pricing" className="text-sm text-gray-500 hover:text-gray-900">Pricing &amp; Pro Plan</a></li>
                 </ul>
               </div>
               <div>
@@ -110,7 +109,7 @@ export default function RootLayout({
             </div>
             {/* Bottom row */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400 border-t border-gray-100 pt-6">
-              <p>© {new Date().getFullYear()} ToolFree. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} Gadify. All rights reserved.</p>
               <div className="flex gap-4">
                 <a href="/privacy" className="hover:text-gray-700">Privacy</a>
                 <a href="/terms" className="hover:text-gray-700">Terms</a>
@@ -118,7 +117,7 @@ export default function RootLayout({
               </div>
             </div>
             <p className="text-center text-xs text-gray-400 mt-3">
-              ToolFree is not affiliated with Instagram, Facebook, Meta Platforms, X Corp, or Adobe. This tool only accesses publicly available content.
+              Gadify is not affiliated with Instagram, Facebook, Meta Platforms, X Corp, or Adobe. This tool only accesses publicly available content.
             </p>
           </div>
         </footer>

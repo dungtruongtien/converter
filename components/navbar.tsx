@@ -44,9 +44,9 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-gray-900 text-lg">
           <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600 text-white text-xs font-bold">
-            TF
+            G
           </span>
-          ToolFree
+          Gadify
         </Link>
 
         {/* Desktop nav */}
@@ -162,16 +162,6 @@ export function Navbar() {
             )}
           </div>
 
-          <Link href="/pricing" className="px-3 py-2 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-colors font-medium">
-            Pricing
-          </Link>
-
-          <Link
-            href="/pricing"
-            className="ml-2 bg-blue-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
-          >
-            Go Pro
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -234,20 +224,6 @@ export function Navbar() {
               {t.label}
             </Link>
           ))}
-          <Link
-            href="/pricing"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-50"
-          >
-            Pricing
-          </Link>
-          <Link
-            href="/pricing"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 bg-blue-600 text-white px-4 py-2.5 rounded-lg font-medium hover:bg-blue-700 text-center transition-colors"
-          >
-            Go Pro
-          </Link>
         </div>
       )}
     </nav>

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { UrlEncodeClient } from "@/components/UrlEncodeClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "URL Encode / Decode — Free Online Percent-Encoding Tool",
   description: "Encode strings for use in URLs (percent-encoding) or decode percent-encoded URLs back to readable text. Free, instant, runs in your browser.",
   keywords: ["url encode", "url decode", "percent encoding", "url encoder decoder", "urlencode online", "encode url free"],
   alternates: { canonical: "/url-encode" },
-  openGraph: { type: "website", url: `${siteUrl}/url-encode`, siteName: "ToolFree", title: "URL Encode / Decode — Free Online Tool", description: "Percent-encode or decode URL strings instantly. Runs in your browser.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/url-encode`, siteName: "Gadify", title: "URL Encode / Decode — Free Online Tool", description: "Percent-encode or decode URL strings instantly. Runs in your browser.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "URL Encode / Decode — Free Online Tool", description: "Encode or decode percent-encoded URL strings instantly." },
 };
 

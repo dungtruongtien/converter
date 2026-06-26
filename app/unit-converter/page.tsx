@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { UnitConverterClient } from "@/components/UnitConverterClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Unit Converter — Length, Weight, Temperature, Speed & More",
   description: "Convert between units of length (km/miles), weight (kg/lbs), temperature (°C/°F), speed, area, and volume. Free online unit converter, instant results.",
   keywords: ["unit converter", "km to miles", "kg to lbs", "celsius to fahrenheit", "length converter", "weight converter", "temperature converter", "metric imperial converter"],
   alternates: { canonical: "/unit-converter" },
-  openGraph: { type: "website", url: `${siteUrl}/unit-converter`, siteName: "ToolFree", title: "Unit Converter — Free Online Tool", description: "Convert length, weight, temperature, speed, area, and volume between metric and imperial units.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/unit-converter`, siteName: "Gadify", title: "Unit Converter — Free Online Tool", description: "Convert length, weight, temperature, speed, area, and volume between metric and imperial units.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Unit Converter — Free Online Tool", description: "Convert km to miles, kg to lbs, Celsius to Fahrenheit, and more." },
 };
 

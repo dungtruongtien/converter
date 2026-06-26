@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'ToolFree – Free Instagram Downloader'
+export const alt = 'Gadify – Free Instagram Downloader'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -22,7 +22,7 @@ export default function Image() {
         }}
       >
         <div style={{ fontSize: 88, fontWeight: 900, color: 'white', marginBottom: 16, letterSpacing: '-2px' }}>
-          ToolFree
+          Gadify
         </div>
         <div style={{ fontSize: 38, color: 'rgba(255,255,255,0.9)', textAlign: 'center', maxWidth: 900, lineHeight: 1.3, marginBottom: 40 }}>
           Download Instagram Photos, Reels & Facebook Videos Free
@@ -44,7 +44,7 @@ export default function Image() {
           ))}
         </div>
         <div style={{ position: 'absolute', bottom: 40, color: 'rgba(255,255,255,0.55)', fontSize: 22 }}>
-          toolfree.app
+          gadify.app
         </div>
       </div>
     ),

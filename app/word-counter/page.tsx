@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { WordCounterClient } from "@/components/WordCounterClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Word Counter — Free Online Word Count Tool",
   description: "Count words, characters, sentences, paragraphs, and reading time instantly. Free online word counter — no signup, works in your browser.",
   keywords: ["word counter", "word count", "character counter", "count words online", "word counter free", "online word count tool"],
   alternates: { canonical: "/word-counter" },
-  openGraph: { type: "website", url: `${siteUrl}/word-counter`, siteName: "ToolFree", title: "Word Counter — Free Online Tool", description: "Count words, characters, sentences, and reading time in seconds.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/word-counter`, siteName: "Gadify", title: "Word Counter — Free Online Tool", description: "Count words, characters, sentences, and reading time in seconds.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Word Counter — Free Online Tool", description: "Instant word count, character count, reading time and more." },
 };
 

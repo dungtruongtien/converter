@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { TimestampConverterClient } from "@/components/TimestampConverterClient";
 import { RelatedTools } from "@/components/related-tools";
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
 export const metadata: Metadata = {
   title: "Timestamp Converter — Unix Time to Date & Date to Unix",
   description: "Convert Unix timestamps to human-readable dates and times, or convert dates back to Unix timestamps. Shows UTC, local time, ISO 8601, and relative time. Free.",
   keywords: ["unix timestamp converter", "timestamp to date", "date to unix timestamp", "epoch converter", "unix time converter", "epoch time"],
   alternates: { canonical: "/timestamp-converter" },
-  openGraph: { type: "website", url: `${siteUrl}/timestamp-converter`, siteName: "ToolFree", title: "Timestamp Converter — Free Online Tool", description: "Convert Unix timestamps to dates or dates to Unix timestamps. Shows UTC, local, ISO 8601.", locale: "en_US" },
+  openGraph: { type: "website", url: `${siteUrl}/timestamp-converter`, siteName: "Gadify", title: "Timestamp Converter — Free Online Tool", description: "Convert Unix timestamps to dates or dates to Unix timestamps. Shows UTC, local, ISO 8601.", locale: "en_US" },
   twitter: { card: "summary_large_image", title: "Timestamp Converter — Free Online Tool", description: "Convert Unix timestamps to readable dates or dates to Unix epoch time." },
 };
 

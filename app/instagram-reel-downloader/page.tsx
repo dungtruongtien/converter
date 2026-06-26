@@ -5,12 +5,12 @@ import ReelsClient from '@/components/ReelsClient'
 import AdUnit from '@/components/AdUnit'
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://toolfree.app'
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gadify.app'
 
 export const metadata: Metadata = {
   title: 'Instagram Reels Downloader – Download Reels Free Online',
   description:
-    'Download Instagram Reels videos for free with ToolFree. Save full-quality Reels from any public Instagram account instantly — no login, no watermark, no app required.',
+    'Download Instagram Reels videos for free with Gadify. Save full-quality Reels from any public Instagram account instantly — no login, no watermark, no app required.',
   keywords: [
     'instagram reels downloader',
     'download instagram reels',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${siteUrl}/instagram-reel-downloader`,
-    siteName: 'ToolFree',
+    siteName: 'Gadify',
     title: 'Instagram Reels Downloader – Download Reels Free Online',
     description:
       'Download full-quality Instagram Reels from any public account for free. No login, no watermark, no app required.',
@@ -57,23 +57,23 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Can I download Instagram Reels without an account?',
-    a: 'Yes. ToolFree lets you download Reels from any public Instagram account without logging in or creating an account.',
+    a: 'Yes. Gadify lets you download Reels from any public Instagram account without logging in or creating an account.',
   },
   {
     q: 'Are downloaded Reels in full quality?',
-    a: 'Yes. ToolFree retrieves the highest-quality version of the Reel directly from Instagram\'s CDN — no compression or watermark added.',
+    a: 'Yes. Gadify retrieves the highest-quality version of the Reel directly from Instagram\'s CDN — no compression or watermark added.',
   },
   {
-    q: 'Does ToolFree work on private Instagram accounts?',
-    a: 'No. ToolFree only works with public Instagram accounts. Reels from private accounts cannot be accessed without the owner\'s permission.',
+    q: 'Does Gadify work on private Instagram accounts?',
+    a: 'No. Gadify only works with public Instagram accounts. Reels from private accounts cannot be accessed without the owner\'s permission.',
   },
   {
     q: 'Can I download Instagram Reels on iPhone or Android?',
-    a: 'Yes. ToolFree works on all devices — iPhone, Android, Windows, Mac — directly in the browser with no app installation needed.',
+    a: 'Yes. Gadify works on all devices — iPhone, Android, Windows, Mac — directly in the browser with no app installation needed.',
   },
   {
-    q: 'Is it safe to use ToolFree to download Reels?',
-    a: 'Yes. ToolFree never asks for your Instagram login or password. It only accesses publicly available video URLs from Instagram\'s own servers.',
+    q: 'Is it safe to use Gadify to download Reels?',
+    a: 'Yes. Gadify never asks for your Instagram login or password. It only accesses publicly available video URLs from Instagram\'s own servers.',
   },
   {
     q: 'Is there a limit to how many Reels I can download?',
@@ -85,7 +85,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'ToolFree – Instagram Reels Downloader',
+    name: 'Gadify – Instagram Reels Downloader',
     url: `${siteUrl}/instagram-reel-downloader`,
     description: 'Free online Instagram Reels downloader. Download full-quality Reels from any public Instagram account — no login, no watermark, no app required.',
     applicationCategory: 'UtilitiesApplication',
@@ -96,7 +96,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How to Download Instagram Reels',
-    description: 'Download any public Instagram Reel in 3 simple steps using ToolFree.',
+    description: 'Download any public Instagram Reel in 3 simple steps using Gadify.',
     step: [
       {
         '@type': 'HowToStep',
@@ -107,8 +107,8 @@ const jsonLd = [
       {
         '@type': 'HowToStep',
         position: 2,
-        name: 'Paste the URL into ToolFree',
-        text: 'Go to toolfree.app/instagram-reel-downloader, paste the Reel URL into the input field, and click the Fetch button.',
+        name: 'Paste the URL into Gadify',
+        text: 'Go to gadify.app/instagram-reel-downloader, paste the Reel URL into the input field, and click the Fetch button.',
       },
       {
         '@type': 'HowToStep',
@@ -170,9 +170,9 @@ export default function InstaReelPage() {
           {/* Intro */}
           <section className="max-w-2xl mx-auto mb-8 text-center">
             <p className="text-sm text-gray-700 leading-relaxed">
-              ToolFree is a free online Instagram Reels downloader that lets you save videos from any public Reel directly to your device.
+              Gadify is a free online Instagram Reels downloader that lets you save videos from any public Reel directly to your device.
               Instagram does not provide a built-in download button for Reels, making it hard to save videos you want to keep.
-              ToolFree solves this — paste the Reel URL, complete a quick verification, and download the original-quality video instantly with no account, no app, and no watermark.
+              Gadify solves this — paste the Reel URL, complete a quick verification, and download the original-quality video instantly with no account, no app, and no watermark.
             </p>
           </section>
 
@@ -202,7 +202,7 @@ export default function InstaReelPage() {
                 {
                   step: '2',
                   title: 'Paste the URL & Click Fetch',
-                  body: 'Paste the copied Reel URL into the input field above and click Fetch. ToolFree will retrieve the video instantly.',
+                  body: 'Paste the copied Reel URL into the input field above and click Fetch. Gadify will retrieve the video instantly.',
                 },
                 {
                   step: '3',
@@ -219,15 +219,15 @@ export default function InstaReelPage() {
             </ol>
           </section>
 
-          {/* Why use ToolFree */}
+          {/* Why use Gadify */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="why-instadown-reels">
-            <h2 id="why-instadown-reels" className="text-xl font-bold text-gray-900 mb-3">Why Use ToolFree to Download Instagram Reels?</h2>
+            <h2 id="why-instadown-reels" className="text-xl font-bold text-gray-900 mb-3">Why Use Gadify to Download Instagram Reels?</h2>
             <ul className="space-y-3">
               {[
-                { title: 'Full Original Quality', body: 'ToolFree downloads the highest-quality version of each Reel directly from Instagram\'s CDN servers — no re-encoding, no compression, no watermark.' },
-                { title: 'No Login Required', body: 'ToolFree never asks for your Instagram username or password. You do not need to create an account or connect any social media profile.' },
-                { title: 'Works on All Devices', body: 'ToolFree is a web-based tool that works on iPhone, Android, Windows, Mac, and any device with a browser — no app installation required.' },
-                { title: 'Completely Free', body: 'ToolFree is 100% free with no hidden fees, no premium plans, and no download limits. Download as many public Reels as you need.' },
+                { title: 'Full Original Quality', body: 'Gadify downloads the highest-quality version of each Reel directly from Instagram\'s CDN servers — no re-encoding, no compression, no watermark.' },
+                { title: 'No Login Required', body: 'Gadify never asks for your Instagram username or password. You do not need to create an account or connect any social media profile.' },
+                { title: 'Works on All Devices', body: 'Gadify is a web-based tool that works on iPhone, Android, Windows, Mac, and any device with a browser — no app installation required.' },
+                { title: 'Completely Free', body: 'Gadify is 100% free with no hidden fees, no premium plans, and no download limits. Download as many public Reels as you need.' },
               ].map(({ title, body }) => (
                 <li key={title} className="flex gap-3 bg-white rounded-xl border border-gray-100 shadow-sm p-4">
                   <span className="flex-shrink-0 text-green-500 font-bold text-base mt-0.5">✓</span>
@@ -239,12 +239,12 @@ export default function InstaReelPage() {
 
           {/* Safety section */}
           <section className="mt-12 max-w-2xl mx-auto" aria-labelledby="reels-safe">
-            <h2 id="reels-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Instagram Reels with ToolFree?</h2>
+            <h2 id="reels-safe" className="text-xl font-bold text-gray-900 mb-3">Is It Safe to Download Instagram Reels with Gadify?</h2>
             <p className="text-sm text-gray-700 mb-3">
-              Yes, ToolFree is completely safe to use. We never request your Instagram credentials, access your account, or store any personal information on our servers.
+              Yes, Gadify is completely safe to use. We never request your Instagram credentials, access your account, or store any personal information on our servers.
             </p>
             <p className="text-sm text-gray-700">
-              ToolFree is a read-only tool — it only retrieves the publicly accessible video URL from an Instagram Reel and proxies it to your browser for download. No data is written to Instagram and no information about you is collected or stored.
+              Gadify is a read-only tool — it only retrieves the publicly accessible video URL from an Instagram Reel and proxies it to your browser for download. No data is written to Instagram and no information about you is collected or stored.
             </p>
           </section>
 
@@ -296,7 +296,7 @@ export default function InstaReelPage() {
               <a href="/sitemap.xml" className="hover:text-gray-700">Sitemap</a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700">Instagram</a>
             </nav>
-            <p className="text-center text-xs text-gray-500">ToolFree is not affiliated with Instagram or Meta Platforms, Inc.</p>
+            <p className="text-center text-xs text-gray-500">Gadify is not affiliated with Instagram or Meta Platforms, Inc.</p>
             <p className="text-center text-xs text-gray-500 mt-1">This tool only accesses publicly available content in accordance with Instagram&apos;s public data policies.</p>
           </footer>
 
