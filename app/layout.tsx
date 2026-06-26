@@ -1,0 +1,127 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Navbar } from "@/components/navbar";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://toolfree.app";
+const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID ?? "ca-pub-5200581180131547";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "ToolFree — Free Online Tools",
+    template: "%s | ToolFree",
+  },
+  description:
+    "Free online tools: PDF to HTML converter, HTML to PDF converter, Instagram photo & Reels downloader, Facebook video downloader, Twitter/X video downloader. No signup required.",
+  keywords: [
+    "free online tools",
+    "pdf to html",
+    "html to pdf",
+    "pdf converter",
+    "instagram downloader",
+    "instagram photo downloader",
+    "instagram reels downloader",
+    "facebook video downloader",
+    "twitter video downloader",
+    "x video downloader",
+  ],
+  authors: [{ name: "ToolFree" }],
+  creator: "ToolFree",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "ToolFree",
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-[#fafafa] text-[#111827]">
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <footer className="border-t border-gray-200 bg-white mt-auto">
+          <div className="max-w-6xl mx-auto px-4 py-8">
+            {/* Tool links */}
+            <div className="grid sm:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p className="text-xs font-semibold text-purple-600 uppercase tracking-wide mb-3">Social Media Tools</p>
+                <ul className="space-y-1.5">
+                  <li><a href="/instagram-photo-downloader" className="text-sm text-gray-500 hover:text-gray-900">Instagram Photo Downloader</a></li>
+                  <li><a href="/instagram-reel-downloader" className="text-sm text-gray-500 hover:text-gray-900">Instagram Reels Downloader</a></li>
+                  <li><a href="/facebook-video-downloader" className="text-sm text-gray-500 hover:text-gray-900">Facebook Video Downloader</a></li>
+                  <li><a href="/twitter-video-downloader" className="text-sm text-gray-500 hover:text-gray-900">X / Twitter Video Downloader</a></li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-3">PDF & Document Tools</p>
+                <ul className="space-y-1.5">
+                  <li><a href="/pdf-to-html" className="text-sm text-gray-500 hover:text-gray-900">PDF to HTML Converter</a></li>
+                  <li><a href="/html-to-pdf" className="text-sm text-gray-500 hover:text-gray-900">HTML to PDF Converter</a></li>
+                  <li><a href="/pricing" className="text-sm text-gray-500 hover:text-gray-900">Pricing &amp; Pro Plan</a></li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-3">Developer Utilities</p>
+                <ul className="space-y-1.5">
+                  <li><a href="/word-counter" className="text-sm text-gray-500 hover:text-gray-900">Word Counter</a></li>
+                  <li><a href="/character-counter" className="text-sm text-gray-500 hover:text-gray-900">Character Counter</a></li>
+                  <li><a href="/case-converter" className="text-sm text-gray-500 hover:text-gray-900">Case Converter</a></li>
+                  <li><a href="/base64" className="text-sm text-gray-500 hover:text-gray-900">Base64 Encode / Decode</a></li>
+                  <li><a href="/url-encode" className="text-sm text-gray-500 hover:text-gray-900">URL Encode / Decode</a></li>
+                  <li><a href="/cron-generator" className="text-sm text-gray-500 hover:text-gray-900">Cron Generator</a></li>
+                  <li><a href="/timestamp-converter" className="text-sm text-gray-500 hover:text-gray-900">Timestamp Converter</a></li>
+                  <li><a href="/unit-converter" className="text-sm text-gray-500 hover:text-gray-900">Unit Converter</a></li>
+                </ul>
+              </div>
+            </div>
+            {/* Bottom row */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400 border-t border-gray-100 pt-6">
+              <p>© {new Date().getFullYear()} ToolFree. All rights reserved.</p>
+              <div className="flex gap-4">
+                <a href="/privacy" className="hover:text-gray-700">Privacy</a>
+                <a href="/terms" className="hover:text-gray-700">Terms</a>
+                <a href="/sitemap.xml" className="hover:text-gray-700">Sitemap</a>
+              </div>
+            </div>
+            <p className="text-center text-xs text-gray-400 mt-3">
+              ToolFree is not affiliated with Instagram, Facebook, Meta Platforms, X Corp, or Adobe. This tool only accesses publicly available content.
+            </p>
+          </div>
+        </footer>
+        <Analytics />
+      </body>
+    </html>
+  );
+}

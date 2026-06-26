@@ -1,0 +1,41 @@
+{
+  "name": "converter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3005",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^149.0.0",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.4.1",
+    "cheerio": "^1.0.0",
+    "next": "16.2.9",
+    "pdfjs-dist": "^6.0.227",
+    "puppeteer-core": "^25.2.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-google-recaptcha": "^3.1.0",
+    "stripe": "^22.3.0",
+    "lucide-react": "^0.511.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
