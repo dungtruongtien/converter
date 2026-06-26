@@ -1,20 +1,17 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { UploadZone } from "@/components/upload-zone";
-import { ProgressBar, ProgressStep } from "@/components/progress-bar";
 import { AdSlot } from "@/components/ad-slot";
-import { formatBytes } from "@/lib/utils";
 
-/* ─── PDF → HTML config ─── */
+/* ─── PDF → HTML options ─── */
 interface PdfToHtmlOptions {
   embedImages: boolean;
   responsiveCss: boolean;
   minify: boolean;
 }
 
-/* ─── HTML → PDF config ─── */
+/* ─── HTML → PDF options ─── */
 interface HtmlToPdfOptions {
   pageSize: "A4" | "Letter";
   margins: "normal" | "narrow" | "none";
@@ -25,35 +22,30 @@ interface HtmlToPdfOptions {
 
 type Mode = "pdf-to-html" | "html-to-pdf";
 
-const PDF_STEPS = ["Uploading", "Parsing PDF structure", "Generating HTML", "Saving output"];
-const HTML_STEPS = ["Uploading", "Loading HTML", "Launching browser", "Saving PDF"];
-
-function stepsFromProgress(labels: string[], serverStep: string, progress: number): ProgressStep[] {
-  return labels.map((label, i) => {
-    const threshold = ((i + 1) / labels.length) * 100;
-    if (progress >= threshold) return { label, status: "done" };
-    if (progress >= (i / labels.length) * 100) return { label, status: "active" };
-    return { label, status: "waiting" };
-  });
+function triggerDownload(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
 }
 
 export function ConverterForm({ mode }: { mode: Mode }) {
-  const router = useRouter();
-
   const [file, setFile] = useState<File | null>(null);
   const [converting, setConverting] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [serverStep, setServerStep] = useState("");
+  const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [downloadBlob, setDownloadBlob] = useState<{ blob: Blob; filename: string } | null>(null);
 
-  // PDF→HTML options
   const [pdfOpts, setPdfOpts] = useState<PdfToHtmlOptions>({
     embedImages: true,
     responsiveCss: true,
     minify: false,
   });
 
-  // HTML→PDF options
   const [htmlOpts, setHtmlOpts] = useState<HtmlToPdfOptions>({
     pageSize: "A4",
     margins: "normal",
@@ -63,33 +55,14 @@ export function ConverterForm({ mode }: { mode: Mode }) {
   });
 
   const isPdf = mode === "pdf-to-html";
-  const stepLabels = isPdf ? PDF_STEPS : HTML_STEPS;
 
-  const pollJob = useCallback(async (jobId: string) => {
-    const maxAttempts = 60;
-    let attempts = 0;
-    while (attempts < maxAttempts) {
-      await new Promise((r) => setTimeout(r, 1500));
-      attempts++;
-      try {
-        const res = await fetch(`/api/job/${jobId}`);
-        const data = await res.json();
-        if (data.status === "done") {
-          router.push(`/result/${jobId}`);
-          return;
-        }
-        if (data.status === "failed") {
-          setError(data.error ?? "Conversion failed. Please try again.");
-          setConverting(false);
-          return;
-        }
-        setProgress(data.progress ?? 0);
-        setServerStep(data.step ?? "");
-      } catch {}
-    }
-    setError("Conversion timed out. Please try again.");
+  const reset = () => {
+    setFile(null);
+    setDone(false);
+    setError(null);
+    setDownloadBlob(null);
     setConverting(false);
-  }, [router]);
+  };
 
   const handleSubmit = async () => {
     if (isPdf && !file) { setError("Please select a PDF file."); return; }
@@ -100,7 +73,8 @@ export function ConverterForm({ mode }: { mode: Mode }) {
 
     setError(null);
     setConverting(true);
-    setProgress(5);
+    setDone(false);
+    setDownloadBlob(null);
 
     try {
       const endpoint = isPdf ? "/api/convert/pdf-to-html" : "/api/convert/html-to-pdf";
@@ -123,26 +97,33 @@ export function ConverterForm({ mode }: { mode: Mode }) {
       }
 
       const res = await fetch(endpoint, { method: "POST", body });
-      const data = await res.json();
 
       if (!res.ok) {
-        setError(data.message ?? "Something went wrong. Please try again.");
+        const data = await res.json().catch(() => ({}));
+        setError((data as { message?: string }).message ?? "Something went wrong. Please try again.");
         setConverting(false);
         return;
       }
 
-      await pollJob(data.jobId);
-    } catch (err) {
+      const blob = await res.blob();
+      const filename = isPdf ? "output.html" : "output.pdf";
+
+      // Trigger download immediately
+      triggerDownload(blob, filename);
+
+      setDownloadBlob({ blob, filename });
+      setConverting(false);
+      setDone(true);
+    } catch {
       setError("Network error. Please check your connection and try again.");
       setConverting(false);
     }
   };
 
-  const steps = stepsFromProgress(stepLabels, serverStep, progress);
-
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
+
         {/* ─── Left panel: file + options ─── */}
         <div className="space-y-6">
           {isPdf ? (
@@ -155,7 +136,6 @@ export function ConverterForm({ mode }: { mode: Mode }) {
             />
           ) : (
             <>
-              {/* Input mode toggle */}
               <div className="flex rounded-lg border border-gray-200 overflow-hidden text-sm">
                 {(["file", "paste"] as const).map((m) => (
                   <button
@@ -183,7 +163,7 @@ export function ConverterForm({ mode }: { mode: Mode }) {
               ) : (
                 <textarea
                   className="w-full h-48 rounded-xl border border-gray-200 p-4 text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="<!DOCTYPE html>&#10;<html>&#10;  <body>&#10;    <h1>Hello world</h1>&#10;  </body>&#10;</html>"
+                  placeholder={"<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Hello world</h1>\n  </body>\n</html>"}
                   value={htmlOpts.pastedHtml}
                   onChange={(e) => setHtmlOpts((o) => ({ ...o, pastedHtml: e.target.value }))}
                 />
@@ -225,7 +205,7 @@ export function ConverterForm({ mode }: { mode: Mode }) {
                     className="flex-1 rounded-lg border border-gray-200 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="A4">A4</option>
-                    <option value="Letter">Letter (Pro)</option>
+                    <option value="Letter">Letter</option>
                   </select>
                 </div>
 
@@ -262,36 +242,73 @@ export function ConverterForm({ mode }: { mode: Mode }) {
             </div>
           )}
 
-          {/* Submit */}
-          {!converting && (
+          {/* Submit / Reset */}
+          {done ? (
+            <button
+              onClick={reset}
+              className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold text-sm hover:bg-gray-200 active:scale-[0.99] transition-all"
+            >
+              ↩ Convert another file
+            </button>
+          ) : (
             <button
               onClick={handleSubmit}
-              className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 active:scale-[0.99] transition-all"
+              disabled={converting}
+              className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {isPdf ? "Convert to HTML" : "Convert to PDF"}
+              {converting ? "Converting…" : isPdf ? "Convert to HTML" : "Convert to PDF"}
             </button>
           )}
 
-          {/* Ad slot — sidebar */}
           <AdSlot slot="2345678901" format="rectangle" />
         </div>
 
-        {/* ─── Right panel: progress or placeholder ─── */}
+        {/* ─── Right panel: status ─── */}
         <div className="rounded-xl border border-gray-200 bg-white p-6 min-h-[320px] flex flex-col">
-          {converting ? (
-            <div className="flex-1 flex flex-col justify-center">
-              <p className="text-sm font-medium text-gray-900 mb-6">Converting…</p>
-              <ProgressBar steps={steps} percent={progress} />
+          {converting && (
+            <div className="flex-1 flex flex-col items-center justify-center gap-5 text-center">
+              {/* Spinner */}
+              <div className="w-12 h-12 rounded-full border-4 border-blue-100 border-t-blue-600 animate-spin" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Converting your file…</p>
+                <p className="text-xs text-gray-400 mt-1">This can take 10–30 seconds for large files.</p>
+              </div>
             </div>
-          ) : (
+          )}
+
+          {done && downloadBlob && (
+            <div className="flex-1 flex flex-col items-center justify-center gap-5 text-center">
+              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Done! Your download started automatically.</p>
+                <p className="text-xs text-gray-400 mt-1">{downloadBlob.filename}</p>
+              </div>
+              <button
+                onClick={() => triggerDownload(downloadBlob.blob, downloadBlob.filename)}
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-blue-700 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download again
+              </button>
+            </div>
+          )}
+
+          {!converting && !done && (
             <div className="flex-1 flex flex-col items-center justify-center text-center text-gray-400 gap-3">
               <span className="text-5xl">{isPdf ? "🌐" : "📄"}</span>
               <p className="text-sm">
-                Your {isPdf ? "HTML output" : "PDF"} will appear here after conversion.
+                Your {isPdf ? "HTML" : "PDF"} will download automatically once conversion is complete.
               </p>
             </div>
           )}
         </div>
+
       </div>
     </div>
   );

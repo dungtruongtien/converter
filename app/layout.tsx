@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { SidebarAds } from "@/components/sidebar-ads";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,6 +71,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Navbar />
+        <SidebarAds />
         <main className="flex-1">{children}</main>
         <footer className="border-t border-gray-200 bg-white mt-auto">
           <div className="max-w-6xl mx-auto px-4 py-8">

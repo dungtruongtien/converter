@@ -85,7 +85,7 @@ export default function PricingPage() {
 
           <button
             className="mt-8 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors"
-            onClick={() => alert("Stripe checkout coming soon — Phase 3!")}
+            
           >
             Upgrade to Pro
           </button>
