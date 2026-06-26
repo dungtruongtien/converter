@@ -79,12 +79,18 @@ export async function convertPdfToHtml(
   pdfBuffer: Buffer,
   options: PdfToHtmlOptions
 ): Promise<ConversionResult> {
-  // Dynamic import — must disable the worker for Node.js server-side execution
-  const pdfjsLib = await import("pdfjs-dist");
+  // Must use the legacy build — the standard build requires DOMMatrix which
+  // is browser-only and throws "DOMMatrix is not defined" in Node.js
+  const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs");
 
-  // In Node.js there is no browser Worker; setting workerSrc to empty string
-  // forces pdfjs to run in main-thread mode (no worker spawned)
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "";
+  // pdfjs v4+ requires a non-empty workerSrc even in Node.js.
+  // Point it at the bundled legacy worker using process.cwd() so the path
+  // resolves correctly both locally and on Railway.
+  const path = await import("path");
+  pdfjsLib.GlobalWorkerOptions.workerSrc = path.join(
+    process.cwd(),
+    "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+  );
 
   const loadingTask = pdfjsLib.getDocument({
     data: new Uint8Array(pdfBuffer),
