@@ -79,12 +79,13 @@ export async function convertPdfToHtml(
   pdfBuffer: Buffer,
   options: PdfToHtmlOptions
 ): Promise<ConversionResult> {
-  // Dynamic import to avoid issues with pdfjs-dist in Next.js
-  const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs" as string).catch(
-    () => import("pdfjs-dist")
-  );
+  // Dynamic import — must disable the worker for Node.js server-side execution
+  const pdfjsLib = await import("pdfjs-dist");
 
-  // pdfjs needs a worker; in Node.js we use the legacy build without a worker
+  // In Node.js there is no browser Worker; setting workerSrc to empty string
+  // forces pdfjs to run in main-thread mode (no worker spawned)
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "";
+
   const loadingTask = pdfjsLib.getDocument({
     data: new Uint8Array(pdfBuffer),
     useSystemFonts: true,
