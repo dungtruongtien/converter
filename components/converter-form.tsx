@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { UploadZone } from "@/components/upload-zone";
-import { AdSlot } from "@/components/ad-slot";
 
 /* ─── PDF → HTML options ─── */
 interface PdfToHtmlOptions {
@@ -260,7 +259,6 @@ export function ConverterForm({ mode }: { mode: Mode }) {
             </button>
           )}
 
-          <AdSlot slot="2345678901" format="rectangle" />
         </div>
 
         {/* ─── Right panel: status ─── */}

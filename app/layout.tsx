@@ -89,7 +89,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Navbar />
-        <SidebarAds />
+        {/* <SidebarAds /> */}
         <main className="flex-1">{children}</main>
         <footer className="border-t border-gray-200 bg-white mt-auto">
           <div className="max-w-6xl mx-auto px-4 py-8">

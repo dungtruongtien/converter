@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AdSlot } from "@/components/ad-slot";
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 
@@ -213,11 +212,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad */}
-      <div className="max-w-6xl mx-auto px-4 py-4">
-        <AdSlot slot="1234567890" format="leaderboard" className="max-w-[728px] mx-auto" />
-      </div>
-
       {/* Social Media Tools */}
       <section className="max-w-5xl mx-auto px-4 py-12" aria-labelledby="social-tools-heading">
         <div className="flex items-center gap-3 mb-7">
@@ -340,11 +334,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* Ad */}
-      <div className="max-w-6xl mx-auto px-4 py-2">
-        <AdSlot slot="0987654321" format="leaderboard" className="max-w-[728px] mx-auto" />
-      </div>
 
       {/* How it works */}
       <section className="max-w-5xl mx-auto px-4 py-14 border-t border-gray-100">

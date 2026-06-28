@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { AdSlot } from "@/components/ad-slot";
 import { getJob } from "@/lib/jobs";
 import { formatBytes } from "@/lib/utils";
 
@@ -99,9 +98,6 @@ export default async function ResultPage({
         </div>
       </div>
 
-      {/* AdSense — best placement */}
-      <AdSlot slot="3456789012" format="leaderboard" className="mb-6" />
-
       {/* Convert another */}
       <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 text-center">
         <p className="text-sm text-gray-600 mb-4 font-medium">Convert another file?</p>
@@ -113,11 +109,6 @@ export default async function ResultPage({
             New HTML → PDF
           </Link>
         </div>
-      </div>
-
-      {/* AdSense rectangle */}
-      <div className="mt-6">
-        <AdSlot slot="4567890123" format="rectangle" className="mx-auto max-w-[300px]" />
       </div>
 
       {/* Related tools */}

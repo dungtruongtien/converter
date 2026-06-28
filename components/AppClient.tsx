@@ -4,8 +4,6 @@ import { useState } from 'react'
 import UrlInput from '@/components/UrlInput'
 import CaptchaGate from '@/components/CaptchaGate'
 import ImageDisplay from '@/components/ImageDisplay'
-import AdUnit from '@/components/AdUnit'
-
 type Stage = 'input' | 'captcha' | 'revealed'
 
 interface PostMeta {
@@ -85,12 +83,7 @@ export default function AppClient({ siteKey }: { siteKey: string }) {
   const stageIndex = STAGES.indexOf(stage)
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 items-start justify-center">
-      {/* Left sidebar ad */}
-      <aside className="hidden lg:block w-[160px] shrink-0" aria-label="Advertisement">
-        <AdUnit slot="1234567891" format="vertical" className="sticky top-8 rounded-xl bg-gray-100 min-h-[600px]" />
-      </aside>
-
+    <div className="flex justify-center">
       {/* Main card */}
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
@@ -139,16 +132,7 @@ export default function AppClient({ siteKey }: { siteKey: string }) {
           )}
         </div>
 
-        {/* In-content ad below card */}
-        <div aria-label="Advertisement">
-          <AdUnit slot="1234567892" format="rectangle" className="mt-6 rounded-xl bg-gray-100 min-h-[250px]" />
-        </div>
       </div>
-
-      {/* Right sidebar ad */}
-      <aside className="hidden lg:block w-[160px] shrink-0" aria-label="Advertisement">
-        <AdUnit slot="1234567893" format="vertical" className="sticky top-8 rounded-xl bg-gray-100 min-h-[600px]" />
-      </aside>
     </div>
   )
 }

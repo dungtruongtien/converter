@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { RelatedTools } from '@/components/related-tools'
 import TabNav from '@/components/TabNav'
 import ReelsClient from '@/components/ReelsClient'
-import AdUnit from '@/components/AdUnit'
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gadify.app'
@@ -147,11 +146,6 @@ export default function InstaReelPage() {
 
       <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="mx-auto max-w-5xl px-4 py-8">
-
-          {/* Top leaderboard ad */}
-          <div aria-label="Advertisement">
-            <AdUnit slot="1234567890" format="horizontal" className="mb-6 rounded-xl bg-gray-100 min-h-[90px]" />
-          </div>
 
           {/* Header */}
           <header className="text-center mb-6">

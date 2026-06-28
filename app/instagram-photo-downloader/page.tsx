@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import TabNav from '@/components/TabNav'
 import AppClient from '@/components/AppClient'
-import AdUnit from '@/components/AdUnit'
 import { RelatedTools } from '@/components/related-tools'
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
@@ -171,11 +170,6 @@ export default function InstaPhotoPage() {
 
       <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="mx-auto max-w-5xl px-4 py-8">
-
-          {/* Top leaderboard ad */}
-          <div aria-label="Advertisement">
-            <AdUnit slot="1234567890" format="horizontal" className="mb-6 rounded-xl bg-gray-100 min-h-[90px]" />
-          </div>
 
           {/* Header */}
           <header className="text-center mb-6">

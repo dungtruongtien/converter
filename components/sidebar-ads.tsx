@@ -23,7 +23,7 @@ function SidebarAdSlot({ slot, side }: { slot: string; side: "left" | "right" })
 
   return (
     <div
-      className={`hidden 2xl:flex fixed top-1/2 -translate-y-1/2 z-40 flex-col items-center justify-center ${
+      className={`hidden xl:flex fixed top-1/2 -translate-y-1/2 z-40 flex-col items-center justify-center ${
         side === "left" ? "left-2" : "right-2"
       }`}
       style={{ width: 160 }}
