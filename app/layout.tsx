@@ -124,6 +124,11 @@ export default function RootLayout({
                   <li><a href="/cron-generator" className="text-sm text-gray-500 hover:text-gray-900">Cron Generator</a></li>
                   <li><a href="/timestamp-converter" className="text-sm text-gray-500 hover:text-gray-900">Timestamp Converter</a></li>
                   <li><a href="/unit-converter" className="text-sm text-gray-500 hover:text-gray-900">Unit Converter</a></li>
+                  <li><a href="/percentage-calculator" className="text-sm text-gray-500 hover:text-gray-900">Percentage Calculator</a></li>
+                  <li><a href="/loan-calculator" className="text-sm text-gray-500 hover:text-gray-900">Loan & Mortgage Calculator</a></li>
+                  <li><a href="/spin-wheel" className="text-sm text-gray-500 hover:text-gray-900">Spin the Wheel</a></li>
+                  <li><a href="/random-picker" className="text-sm text-gray-500 hover:text-gray-900">Random Picker</a></li>
+                  <li><a href="/qr-code" className="text-sm text-gray-500 hover:text-gray-900">QR Code Generator</a></li>
                 </ul>
               </div>
             </div>

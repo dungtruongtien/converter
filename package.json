@@ -22,14 +22,17 @@
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^6.0.227",
     "puppeteer-core": "^25.2.1",
+    "qrcode": "^1.5.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-google-recaptcha": "^3.1.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.43",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-google-recaptcha": "^2.1.9",

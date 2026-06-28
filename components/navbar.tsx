@@ -27,6 +27,11 @@ const devToolsNav = [
   { href: "/cron-generator", label: "Cron Generator" },
   { href: "/timestamp-converter", label: "Timestamp Converter" },
   { href: "/unit-converter", label: "Unit Converter" },
+  { href: "/percentage-calculator", label: "Percentage Calculator" },
+  { href: "/loan-calculator", label: "Loan & Mortgage Calculator" },
+  { href: "/spin-wheel", label: "Spin the Wheel" },
+  { href: "/random-picker", label: "Random Picker" },
+  { href: "/qr-code", label: "QR Code Generator" },
 ];
 
 export function Navbar() {
@@ -37,7 +42,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   const isSocial = socialTools.some((t) => pathname === t.href);
-  const isPdf = pdfTools.some((t) => pathname === t.href) || pathname === "/pdf-toolkit" || pathname === "/image-tools";
+  const isPdf = pdfTools.some((t) => pathname === t.href);
   const isDev = devToolsNav.some((t) => pathname === t.href);
 
   return (

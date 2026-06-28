@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 export const metadata: Metadata = {
   title: "Gadify — Free Online Tools | PDF, Social Media & Developer Utilities",
   description:
-    "16 free online tools in one place. Convert PDF to HTML, merge and split PDFs, compress images, download Instagram & Facebook videos, count words, encode Base64, and more. No signup.",
+    "21 free online tools in one place. Convert PDF to HTML, merge and split PDFs, compress images, generate QR codes, calculate loans and percentages, spin a wheel, and more. No signup.",
   keywords: [
     "free online tools",
     "pdf to html converter",
@@ -76,6 +76,11 @@ const jsonLd = [
       { "@type": "ListItem", position: 14, name: "Cron Expression Generator", url: `${siteUrl}/cron-generator` },
       { "@type": "ListItem", position: 15, name: "Timestamp Converter", url: `${siteUrl}/timestamp-converter` },
       { "@type": "ListItem", position: 16, name: "Unit Converter", url: `${siteUrl}/unit-converter` },
+      { "@type": "ListItem", position: 17, name: "Percentage Calculator", url: `${siteUrl}/percentage-calculator` },
+      { "@type": "ListItem", position: 18, name: "Loan & Mortgage Calculator", url: `${siteUrl}/loan-calculator` },
+      { "@type": "ListItem", position: 19, name: "Spin the Wheel", url: `${siteUrl}/spin-wheel` },
+      { "@type": "ListItem", position: 20, name: "Random Picker", url: `${siteUrl}/random-picker` },
+      { "@type": "ListItem", position: 21, name: "QR Code Generator", url: `${siteUrl}/qr-code` },
     ],
   },
 ];
@@ -192,12 +197,17 @@ const devTools = [
   { id: "cron-generator", title: "Cron Generator", description: "Build cron schedules visually with English descriptions.", href: "/cron-generator", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
   { id: "timestamp-converter", title: "Timestamp Converter", description: "Unix → date and date → Unix. UTC, ISO 8601, relative.", href: "/timestamp-converter", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> },
   { id: "unit-converter", title: "Unit Converter", description: "Length, weight, temperature, speed, area, and volume.", href: "/unit-converter", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg> },
+  { id: "percentage-calculator", title: "Percentage Calculator", description: "What is X% of Y? % change, add/subtract %.", href: "/percentage-calculator", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>, badge: "New" },
+  { id: "loan-calculator", title: "Loan Calculator", description: "Monthly payment, total interest, and amortization schedule.", href: "/loan-calculator", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>, badge: "New" },
+  { id: "spin-wheel", title: "Spin the Wheel", description: "Random decision maker. Add options, spin, pick a winner.", href: "/spin-wheel", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>, badge: "New" },
+  { id: "random-picker", title: "Random Picker", description: "List, numbers, coin flip, dice roll, or card draw.", href: "/random-picker", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>, badge: "New" },
+  { id: "qr-code", title: "QR Code Generator", description: "URL, Wi-Fi, vCard, VietQR, email, calendar, and more.", href: "/qr-code", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" /></svg>, badge: "New" },
 ];
 
 const faqs = [
   {
     q: "Are all tools completely free?",
-    a: "Yes. All 16 tools are free with no account required. No signup, no watermark, no limits.",
+    a: "Yes. All 21 tools are free with no account required. No signup, no watermark, no limits.",
   },
   {
     q: "Do I need to create an account?",
@@ -226,7 +236,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 pt-16 pb-14 text-center">
           <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
-            16 free tools — no signup required
+            21 free tools — no signup required
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
             Free Online Tools
@@ -335,16 +345,21 @@ export default function HomePage() {
           </div>
           <div>
             <h2 id="dev-tools-heading" className="text-xl font-bold text-gray-900">Developer Utilities</h2>
-            <p className="text-sm text-gray-500">Text processing, encoding, scheduling, and conversion tools</p>
+            <p className="text-sm text-gray-500">Text processing, calculators, QR codes, encoding, and more</p>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {devTools.map(({ id, title, description, href, icon }) => (
+          {devTools.map(({ id, title, description, href, icon, badge }) => (
             <Link
               key={id}
               href={href}
-              className="group flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-green-200 transition-all p-5"
+              className="group relative flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-green-200 transition-all p-5"
             >
+              {badge && (
+                <span className="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded-full">
+                  {badge}
+                </span>
+              )}
               <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-green-600 to-emerald-500 shadow mb-4">
                 {icon}
               </div>
