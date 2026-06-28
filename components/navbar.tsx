@@ -14,6 +14,8 @@ const socialTools = [
 const pdfTools = [
   { href: "/pdf-to-html", label: "PDF → HTML" },
   { href: "/html-to-pdf", label: "HTML → PDF" },
+  { href: "/pdf-toolkit", label: "PDF Toolkit (Merge / Split)" },
+  { href: "/image-tools", label: "Image Compressor & Converter" },
 ];
 
 const devToolsNav = [
@@ -35,7 +37,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   const isSocial = socialTools.some((t) => pathname === t.href);
-  const isPdf = pdfTools.some((t) => pathname === t.href);
+  const isPdf = pdfTools.some((t) => pathname === t.href) || pathname === "/pdf-toolkit" || pathname === "/image-tools";
   const isDev = devToolsNav.some((t) => pathname === t.href);
 
   return (

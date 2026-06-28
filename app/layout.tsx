@@ -109,6 +109,8 @@ export default function RootLayout({
                 <ul className="space-y-1.5">
                   <li><a href="/pdf-to-html" className="text-sm text-gray-500 hover:text-gray-900">PDF to HTML Converter</a></li>
                   <li><a href="/html-to-pdf" className="text-sm text-gray-500 hover:text-gray-900">HTML to PDF Converter</a></li>
+                  <li><a href="/pdf-toolkit" className="text-sm text-gray-500 hover:text-gray-900">PDF Toolkit (Merge / Split)</a></li>
+                  <li><a href="/image-tools" className="text-sm text-gray-500 hover:text-gray-900">Image Compressor &amp; Converter</a></li>
                 </ul>
               </div>
               <div>

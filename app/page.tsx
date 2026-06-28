@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 export const metadata: Metadata = {
   title: "Gadify — Free Online Tools | PDF, Social Media & Developer Utilities",
   description:
-    "14 free online tools in one place. Convert PDF to HTML, download Instagram & Facebook videos, count words, encode Base64, convert units, and more. No signup, no watermark.",
+    "16 free online tools in one place. Convert PDF to HTML, merge and split PDFs, compress images, download Instagram & Facebook videos, count words, encode Base64, and more. No signup.",
   keywords: [
     "free online tools",
     "pdf to html converter",
@@ -62,18 +62,20 @@ const jsonLd = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "PDF to HTML Converter", url: `${siteUrl}/pdf-to-html` },
       { "@type": "ListItem", position: 2, name: "HTML to PDF Converter", url: `${siteUrl}/html-to-pdf` },
-      { "@type": "ListItem", position: 3, name: "Instagram Photo Downloader", url: `${siteUrl}/instagram-photo-downloader` },
-      { "@type": "ListItem", position: 4, name: "Instagram Reels Downloader", url: `${siteUrl}/instagram-reel-downloader` },
-      { "@type": "ListItem", position: 5, name: "Facebook Video Downloader", url: `${siteUrl}/facebook-video-downloader` },
-      { "@type": "ListItem", position: 6, name: "Twitter/X Video Downloader", url: `${siteUrl}/twitter-video-downloader` },
-      { "@type": "ListItem", position: 7, name: "Word Counter", url: `${siteUrl}/word-counter` },
-      { "@type": "ListItem", position: 8, name: "Character Counter", url: `${siteUrl}/character-counter` },
-      { "@type": "ListItem", position: 9, name: "Case Converter", url: `${siteUrl}/case-converter` },
-      { "@type": "ListItem", position: 10, name: "Base64 Encode / Decode", url: `${siteUrl}/base64` },
-      { "@type": "ListItem", position: 11, name: "URL Encode / Decode", url: `${siteUrl}/url-encode` },
-      { "@type": "ListItem", position: 12, name: "Cron Expression Generator", url: `${siteUrl}/cron-generator` },
-      { "@type": "ListItem", position: 13, name: "Timestamp Converter", url: `${siteUrl}/timestamp-converter` },
-      { "@type": "ListItem", position: 14, name: "Unit Converter", url: `${siteUrl}/unit-converter` },
+      { "@type": "ListItem", position: 3, name: "PDF Toolkit — Merge, Split & Compress", url: `${siteUrl}/pdf-toolkit` },
+      { "@type": "ListItem", position: 4, name: "Image Compressor & Converter", url: `${siteUrl}/image-tools` },
+      { "@type": "ListItem", position: 5, name: "Instagram Photo Downloader", url: `${siteUrl}/instagram-photo-downloader` },
+      { "@type": "ListItem", position: 6, name: "Instagram Reels Downloader", url: `${siteUrl}/instagram-reel-downloader` },
+      { "@type": "ListItem", position: 7, name: "Facebook Video Downloader", url: `${siteUrl}/facebook-video-downloader` },
+      { "@type": "ListItem", position: 8, name: "Twitter/X Video Downloader", url: `${siteUrl}/twitter-video-downloader` },
+      { "@type": "ListItem", position: 9, name: "Word Counter", url: `${siteUrl}/word-counter` },
+      { "@type": "ListItem", position: 10, name: "Character Counter", url: `${siteUrl}/character-counter` },
+      { "@type": "ListItem", position: 11, name: "Case Converter", url: `${siteUrl}/case-converter` },
+      { "@type": "ListItem", position: 12, name: "Base64 Encode / Decode", url: `${siteUrl}/base64` },
+      { "@type": "ListItem", position: 13, name: "URL Encode / Decode", url: `${siteUrl}/url-encode` },
+      { "@type": "ListItem", position: 14, name: "Cron Expression Generator", url: `${siteUrl}/cron-generator` },
+      { "@type": "ListItem", position: 15, name: "Timestamp Converter", url: `${siteUrl}/timestamp-converter` },
+      { "@type": "ListItem", position: 16, name: "Unit Converter", url: `${siteUrl}/unit-converter` },
     ],
   },
 ];
@@ -155,6 +157,30 @@ const pdfTools = [
     ),
     badge: null,
   },
+  {
+    id: "pdf-toolkit",
+    title: "PDF Toolkit",
+    description: "Merge multiple PDFs into one, split by page range, or compress PDF files — all free in your browser.",
+    href: "/pdf-toolkit",
+    icon: (
+      <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      </svg>
+    ),
+    badge: "New",
+  },
+  {
+    id: "image-tools",
+    title: "Image Compressor & Converter",
+    description: "Compress, convert, and resize images in your browser. JPEG, PNG, WebP — no upload required.",
+    href: "/image-tools",
+    icon: (
+      <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+      </svg>
+    ),
+    badge: "New",
+  },
 ];
 
 const devTools = [
@@ -171,7 +197,7 @@ const devTools = [
 const faqs = [
   {
     q: "Are all tools completely free?",
-    a: "Yes. All 14 tools are free with no account required. The PDF converter offers an optional Pro plan for power users who need larger files and batch conversion.",
+    a: "Yes. All 16 tools are free with no account required. No signup, no watermark, no limits.",
   },
   {
     q: "Do I need to create an account?",
@@ -200,7 +226,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 pt-16 pb-14 text-center">
           <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
-            14 free tools — no signup required
+            16 free tools — no signup required
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
             Free Online Tools

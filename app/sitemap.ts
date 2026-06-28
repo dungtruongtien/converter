@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/twitter-video-downloader", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/pdf-to-html", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/html-to-pdf", priority: 0.9, changeFrequency: "weekly" as const },
+    { url: "/pdf-toolkit", priority: 0.9, changeFrequency: "weekly" as const },
+    { url: "/image-tools", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/word-counter", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/character-counter", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/case-converter", priority: 0.9, changeFrequency: "weekly" as const },
