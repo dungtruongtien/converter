@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://gadify.app";
 export const metadata: Metadata = {
   title: "Gadify — Free Online Tools | PDF, Social Media & Developer Utilities",
   description:
-    "21 free online tools in one place. Convert PDF to HTML, merge and split PDFs, compress images, generate QR codes, calculate loans and percentages, spin a wheel, and more. No signup.",
+    "22 free online tools in one place. Convert PDF to HTML, merge and split PDFs, compress images, generate QR codes, calculate loans and percentages, spin a wheel, and more. No signup.",
   keywords: [
     "free online tools",
     "pdf to html converter",
@@ -81,6 +81,7 @@ const jsonLd = [
       { "@type": "ListItem", position: 19, name: "Spin the Wheel", url: `${siteUrl}/spin-wheel` },
       { "@type": "ListItem", position: 20, name: "Random Picker", url: `${siteUrl}/random-picker` },
       { "@type": "ListItem", position: 21, name: "QR Code Generator", url: `${siteUrl}/qr-code` },
+      { "@type": "ListItem", position: 22, name: "Mind Map Maker", url: `${siteUrl}/mindmap` },
     ],
   },
 ];
@@ -204,10 +205,14 @@ const devTools = [
   { id: "qr-code", title: "QR Code Generator", description: "URL, Wi-Fi, vCard, VietQR, email, calendar, and more.", href: "/qr-code", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" /></svg>, badge: "New" },
 ];
 
+const vizTools = [
+  { id: "mindmap", title: "Mind Map Maker", description: "Visual brainstorming. Pan, zoom, export/import JSON.", href: "/mindmap", icon: <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" /></svg>, badge: "New" },
+];
+
 const faqs = [
   {
     q: "Are all tools completely free?",
-    a: "Yes. All 21 tools are free with no account required. No signup, no watermark, no limits.",
+    a: "Yes. All 22 tools are free with no account required. No signup, no watermark, no limits.",
   },
   {
     q: "Do I need to create an account?",
@@ -236,7 +241,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 pt-16 pb-14 text-center">
           <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1 rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
-            21 free tools — no signup required
+            22 free tools — no signup required
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
             Free Online Tools
@@ -366,6 +371,47 @@ export default function HomePage() {
               <h3 className="font-bold text-gray-900 text-sm mb-2">{title}</h3>
               <p className="text-xs text-gray-500 mb-4 flex-1">{description}</p>
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-green-600 group-hover:gap-2 transition-all">
+                Use tool
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Visualization Tools */}
+      <section className="max-w-5xl mx-auto px-4 pb-12" aria-labelledby="viz-tools-heading">
+        <div className="flex items-center gap-3 mb-7">
+          <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 shadow-sm">
+            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+            </svg>
+          </div>
+          <div>
+            <h2 id="viz-tools-heading" className="text-xl font-bold text-gray-900">Visualization Tools</h2>
+            <p className="text-sm text-gray-500">Visual thinking and diagramming tools for brainstorming and planning</p>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {vizTools.map(({ id, title, description, href, icon, badge }) => (
+            <Link
+              key={id}
+              href={href}
+              className="group relative flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all p-5"
+            >
+              {badge && (
+                <span className="absolute top-4 right-4 bg-violet-100 text-violet-700 text-xs font-semibold px-2 py-0.5 rounded-full">
+                  {badge}
+                </span>
+              )}
+              <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 shadow mb-4">
+                {icon}
+              </div>
+              <h3 className="font-bold text-gray-900 text-sm mb-2">{title}</h3>
+              <p className="text-xs text-gray-500 mb-4 flex-1">{description}</p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-violet-600 group-hover:gap-2 transition-all">
                 Use tool
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

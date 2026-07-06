@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/spin-wheel", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/qr-code", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/random-picker", priority: 0.9, changeFrequency: "weekly" as const },
+    { url: "/mindmap", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/pricing", priority: 0.7, changeFrequency: "monthly" as const },
   ];
 

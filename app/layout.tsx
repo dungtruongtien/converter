@@ -130,6 +130,10 @@ export default function RootLayout({
                   <li><a href="/random-picker" className="text-sm text-gray-500 hover:text-gray-900">Random Picker</a></li>
                   <li><a href="/qr-code" className="text-sm text-gray-500 hover:text-gray-900">QR Code Generator</a></li>
                 </ul>
+                <p className="text-xs font-semibold text-violet-600 uppercase tracking-wide mt-5 mb-3">Visualization</p>
+                <ul className="space-y-1.5">
+                  <li><a href="/mindmap" className="text-sm text-gray-500 hover:text-gray-900">Mind Map Maker</a></li>
+                </ul>
               </div>
             </div>
             {/* Bottom row */}

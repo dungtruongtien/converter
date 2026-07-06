@@ -34,16 +34,22 @@ const devToolsNav = [
   { href: "/qr-code", label: "QR Code Generator" },
 ];
 
+const vizToolsNav = [
+  { href: "/mindmap", label: "Mind Map Maker" },
+];
+
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [socialOpen, setSocialOpen] = useState(false);
   const [pdfOpen, setPdfOpen] = useState(false);
   const [devOpen, setDevOpen] = useState(false);
+  const [vizOpen, setVizOpen] = useState(false);
   const pathname = usePathname();
 
   const isSocial = socialTools.some((t) => pathname === t.href);
   const isPdf = pdfTools.some((t) => pathname === t.href);
   const isDev = devToolsNav.some((t) => pathname === t.href);
+  const isViz = vizToolsNav.some((t) => pathname === t.href);
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
@@ -169,6 +175,43 @@ export function Navbar() {
             )}
           </div>
 
+          {/* Visualization dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setVizOpen(true)}
+            onMouseLeave={() => setVizOpen(false)}
+          >
+            <button
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors font-medium ${
+                isViz ? "text-violet-600" : "text-gray-600"
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+              </svg>
+              Visualization
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {vizOpen && (
+              <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl border border-gray-100 shadow-lg py-1.5 z-50">
+                {vizToolsNav.map((t) => (
+                  <Link
+                    key={t.href}
+                    href={t.href}
+                    className={`flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-violet-50 hover:text-violet-700 transition-colors ${
+                      pathname === t.href ? "text-violet-600 font-medium" : "text-gray-700"
+                    }`}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" />
+                    {t.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
         </div>
 
         {/* Mobile hamburger */}
@@ -226,6 +269,19 @@ export function Navbar() {
               onClick={() => setMenuOpen(false)}
               className={`px-3 py-2.5 rounded-lg transition-colors ${
                 pathname === t.href ? "bg-green-50 text-green-700 font-medium" : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              {t.label}
+            </Link>
+          ))}
+          <p className="text-xs font-semibold text-violet-600 uppercase tracking-wide px-2 py-1 mt-2">Visualization</p>
+          {vizToolsNav.map((t) => (
+            <Link
+              key={t.href}
+              href={t.href}
+              onClick={() => setMenuOpen(false)}
+              className={`px-3 py-2.5 rounded-lg transition-colors ${
+                pathname === t.href ? "bg-violet-50 text-violet-700 font-medium" : "text-gray-700 hover:bg-gray-50"
               }`}
             >
               {t.label}
