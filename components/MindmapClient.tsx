@@ -278,11 +278,25 @@ export default function MindmapClient() {
 
   const onMouseUp = useCallback(() => { isPanning.current = false; }, []);
 
-  const onWheel = useCallback((e: React.WheelEvent<SVGSVGElement>) => {
-    e.preventDefault();
-    const factor = e.deltaY < 0 ? 1.1 : 0.9;
-    setCamera(c => ({ ...c, zoom: Math.min(3, Math.max(0.2, c.zoom * factor)) }));
+  // Register wheel as non-passive so preventDefault() actually works
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+    const handler = (e: WheelEvent) => {
+      e.preventDefault();
+      if (e.ctrlKey) {
+        // Pinch-to-zoom (trackpad pinch or Ctrl+scroll)
+        const factor = e.deltaY < 0 ? 1.07 : 0.93;
+        setCamera(c => ({ ...c, zoom: Math.min(3, Math.max(0.2, c.zoom * factor)) }));
+      } else {
+        // Two-finger scroll → pan
+        setCamera(c => ({ ...c, x: c.x - e.deltaX, y: c.y - e.deltaY }));
+      }
+    };
+    el.addEventListener("wheel", handler, { passive: false });
+    return () => el.removeEventListener("wheel", handler);
   }, []);
+
 
   const resetView = useCallback(() => setCamera({ x: 120, y: 300, zoom: 1 }), []);
 
@@ -530,7 +544,6 @@ export default function MindmapClient() {
           onMouseMove={onMouseMove}
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseUp}
-          onWheel={onWheel}
           onClick={() => { if (editing) commitEdit(); }}
         >
           <g transform={`translate(${camera.x}, ${camera.y}) scale(${camera.zoom})`}>
@@ -556,7 +569,8 @@ export default function MindmapClient() {
           <span><kbd className="font-mono bg-gray-100 px-1 rounded">Enter</kbd> sibling</span>
           <span><kbd className="font-mono bg-gray-100 px-1 rounded">F2</kbd> rename</span>
           <span><kbd className="font-mono bg-gray-100 px-1 rounded">Del</kbd> delete</span>
-          <span><kbd className="font-mono bg-gray-100 px-1 rounded">scroll</kbd> zoom</span>
+          <span><kbd className="font-mono bg-gray-100 px-1 rounded">pinch</kbd> zoom</span>
+          <span><kbd className="font-mono bg-gray-100 px-1 rounded">2-finger</kbd> pan</span>
         </div>
       </div>
     </div>
